@@ -1,12 +1,12 @@
-/* ─────────────────────────────────────────
+﻿/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    VARIABLES & RESET
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 :root {
   --bg:         #080e1a;
   --bg-2:       #0d1525;
   --bg-card:    #111d30;
   --blue:       #1B4FFF;
-  --blue-light: #BCD9F5;        /* ta couleur CV — utilisée pour accents */
+  --blue-light: #BCD9F5;        /* ta couleur CV ÔÇö utilis├®e pour accents */
   --blue-glow:  rgba(188, 217, 245, 0.12);
   --accent:     #BCD9F5;
   --text:       #e8edf8;
@@ -32,9 +32,9 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    UTILITIES
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .highlight {
   color: var(--blue-light);
 }
@@ -70,9 +70,9 @@ ul { list-style: none; }
   margin-bottom: 24px;
 }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    BUTTONS
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -113,9 +113,9 @@ ul { list-style: none; }
 }
 .btn-full { width: 100%; justify-content: center; }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    BLOBS & BACKGROUND
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -154,9 +154,9 @@ ul { list-style: none; }
   pointer-events: none;
 }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    ANIMATIONS
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -179,9 +179,9 @@ ul { list-style: none; }
 .reveal.delay-1 { transition-delay: 0.15s; }
 .reveal.delay-2 { transition-delay: 0.3s; }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    NAVBAR
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 100;
@@ -221,9 +221,9 @@ ul { list-style: none; }
   background: var(--text); border-radius: 2px;
 }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    HERO
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .hero {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
@@ -266,6 +266,7 @@ ul { list-style: none; }
 }
 .image-frame {
   position: relative; width: 340px; height: 410px;
+  max-width: 100%;
 }
 .image-frame img {
   width: 100%; height: 100%; object-fit: cover;
@@ -318,9 +319,9 @@ ul { list-style: none; }
   50% { width: 60px; opacity: 0.8; }
 }
 
-/* ─────────────────────────────────────────
-   SECTIONS GÉNÉRALES
-───────────────────────────────────────── */
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+   SECTIONS G├ëN├ëRALES
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .section-header { max-width: 1200px; margin: 0 auto 64px; }
 .voir-tout { text-align: center; margin-top: 56px; }
 .cta-section { background: var(--bg-2); }
@@ -330,9 +331,9 @@ ul { list-style: none; }
   flex-direction: column; align-items: center; gap: 24px;
 }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    PROJETS
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .projets { background: var(--bg); }
 .projects-grid {
   max-width: 1200px; margin: 0 auto;
@@ -396,9 +397,9 @@ ul { list-style: none; }
 }
 .project-link:hover { gap: 12px; }
 
-/* ─────────────────────────────────────────
-   À PROPOS HOME
-───────────────────────────────────────── */
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+   ├Ç PROPOS HOME
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .apropos-home { background: var(--bg-2); }
 .apropos-home-inner {
   max-width: 1200px; margin: 0 auto;
@@ -425,9 +426,9 @@ ul { list-style: none; }
 .stat-label { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.05em; }
 .apropos-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    CONTACT HOME
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .contact-home { background: var(--bg); }
 .contact-home-inner {
   max-width: 1200px; margin: 0 auto;
@@ -457,9 +458,9 @@ ul { list-style: none; }
   width: fit-content;
 }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    CONTACT FORM
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .contact-page { background: var(--bg); }
 .contact-inner {
   position: relative; z-index: 1;
@@ -499,9 +500,9 @@ ul { list-style: none; }
 .form-success { display: none; text-align: center; font-size: 0.9rem; color: #00e676; }
 .form-success.show { display: block; }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    PAGE HERO
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .page-hero {
   min-height: 42vh;
   display: flex; align-items: flex-end;
@@ -523,9 +524,9 @@ ul { list-style: none; }
   max-width: 560px; line-height: 1.8;
 }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    CV PAGE
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .cv-page { background: var(--bg); }
 .cv-inner {
   max-width: 1200px; margin: 0 auto;
@@ -580,7 +581,7 @@ ul { list-style: none; }
   padding-left: 16px; position: relative; line-height: 1.6;
 }
 .timeline-bullets li::before {
-  content: '—'; position: absolute; left: 0; color: var(--blue-light);
+  content: 'ÔÇö'; position: absolute; left: 0; color: var(--blue-light);
 }
 .badge-stage, .badge-civique, .badge-benevole {
   display: inline-block;
@@ -600,9 +601,9 @@ ul { list-style: none; }
   align-items: center; gap: 20px;
 }
 
-/* ─────────────────────────────────────────
-   COMPÉTENCES PAGE
-───────────────────────────────────────── */
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+   COMP├ëTENCES PAGE
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .competences-page { background: var(--bg); }
 .comp-block { max-width: 1200px; margin: 0 auto; }
 .logiciels-grid {
@@ -679,9 +680,9 @@ ul { list-style: none; }
 .langue-info h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
 .langue-niveau { font-size: 0.75rem; color: var(--blue-light); display: block; margin-bottom: 10px; }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    PROJETS PAGE
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .projets-page { background: var(--bg); }
 .projets-categorie { max-width: 1200px; margin: 0 auto 40px; }
 .projet-detail {
@@ -716,15 +717,15 @@ ul { list-style: none; }
   font-size: 0.88rem; color: var(--text-muted);
   padding-left: 20px; position: relative; line-height: 1.6;
 }
-.projet-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--blue-light); }
+.projet-bullets li::before { content: 'ÔåÆ'; position: absolute; left: 0; color: var(--blue-light); }
 .projets-mini-grid {
   max-width: 1200px; margin: 0 auto;
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
 }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    FOOTER
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .footer {
   background: var(--bg-2);
   border-top: 1px solid var(--border);
@@ -740,18 +741,37 @@ ul { list-style: none; }
 .footer-links a { font-size: 0.85rem; color: var(--text-muted); transition: color 0.3s; }
 .footer-links a:hover { color: var(--blue-light); }
 
-/* ─────────────────────────────────────────
+/* ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
    RESPONSIVE
-───────────────────────────────────────── */
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 @media (max-width: 1100px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
 }
 @media (max-width: 900px) {
-  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero {
+    padding: 120px 5vw 60px;
+  }
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
   .hero-tag, .hero-cta { justify-content: center; }
   .hero-desc { margin: 0 auto 40px; }
-  .hero-image { display: none; }
+
+  /* Ô£à PHOTO VISIBLE sur mobile ÔÇö centree et redimensionnee */
+  .hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: -1; /* photo en premier sur mobile */
+  }
+  .image-frame {
+    width: 220px;
+    height: 270px;
+  }
+
   .scroll-hint { display: none; }
   .projects-grid { grid-template-columns: 1fr; }
   .project-card.large { grid-column: span 1; display: block; }
@@ -765,24 +785,46 @@ ul { list-style: none; }
   .langues-grid { grid-template-columns: 1fr; }
   .projet-detail { grid-template-columns: 1fr; gap: 32px; }
   .projets-mini-grid { grid-template-columns: 1fr 1fr; }
-  .page-hero { padding: 140px 5vw 60px; }
+  .page-hero { padding: 130px 5vw 60px; }
 }
 @media (max-width: 600px) {
-  .section { padding: 80px 5vw; }
+  .section { padding: 70px 5vw; }
+  .hero { padding: 100px 5vw 50px; }
+  .hero-title { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .image-frame {
+    width: 180px;
+    height: 220px;
+  }
+  .image-border { inset: -10px; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form { padding: 24px; }
   .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; gap: 16px; }
   .apropos-home-stats { grid-template-columns: 1fr 1fr; }
   .logiciels-grid { grid-template-columns: 1fr 1fr; }
   .projets-mini-grid { grid-template-columns: 1fr; }
   .projet-meta { flex-direction: column; gap: 16px; }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn-primary, .hero-cta .btn-ghost { width: 100%; justify-content: center; max-width: 280px; }
+  .stat-card { padding: 20px 14px; }
+  .stat-number { font-size: 2.2rem; }
+}
+@media (max-width: 400px) {
+  .hero-title { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+  .image-frame {
+    width: 160px;
+    height: 195px;
+  }
+  .logiciels-grid { grid-template-columns: 1fr; }
+  .langues-grid { grid-template-columns: 1fr; }
+  .apropos-home-stats { grid-template-columns: 1fr 1fr; }
 }
 
-/* ═══════════════════════════════════════════════════
-   MOTION UI v2.0 — AJOUTS FRAMER-INSPIRED
-═══════════════════════════════════════════════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ
+   MOTION UI v2.0 ÔÇö AJOUTS FRAMER-INSPIRED
+ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 
-/* ── SCROLL PROGRESS BAR ─────────────────────────── */
+/* ÔöÇÔöÇ SCROLL PROGRESS BAR ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 #scroll-progress {
   position: fixed;
   top: 0; left: 0;
@@ -795,7 +837,7 @@ ul { list-style: none; }
   transition: transform 0.05s linear;
 }
 
-/* ── CUSTOM CURSOR ───────────────────────────────── */
+/* ÔöÇÔöÇ CUSTOM CURSOR ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 #cursor { pointer-events: none; position: fixed; top: 0; left: 0; z-index: 9998; }
 
 .cursor-dot {
@@ -831,7 +873,7 @@ ul { list-style: none; }
 
 @media (hover: none) { #cursor { display: none; } }
 
-/* ── PAGE TRANSITIONS ────────────────────────────── */
+/* ÔöÇÔöÇ PAGE TRANSITIONS ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 body {
   animation: pageIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -847,12 +889,12 @@ body.page-exit {
   to { opacity: 0; transform: translateY(-10px); }
 }
 
-/* ── NAVBAR TRANSITION ───────────────────────────── */
+/* ÔöÇÔöÇ NAVBAR TRANSITION ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .navbar {
   transition: background 0.3s, padding 0.3s, transform 0.4s cubic-bezier(0.16,1,0.3,1);
 }
 
-/* ── HAMBURGER ANIMATED ──────────────────────────── */
+/* ÔöÇÔöÇ HAMBURGER ANIMATED ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .hamburger { transition: transform 0.3s; }
 .hamburger.open { transform: rotate(45deg); }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(0deg); }
@@ -865,7 +907,7 @@ body.page-exit {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ── REVEAL VARIANTS ─────────────────────────────── */
+/* ÔöÇÔöÇ REVEAL VARIANTS ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .reveal {
   opacity: 0;
   transform: translateY(44px);
@@ -877,7 +919,7 @@ body.page-exit {
 .reveal.delay-2 { transition-delay: 0.2s; }
 .reveal.delay-3 { transition-delay: 0.32s; }
 
-/* ── CARD SHINE OVERLAY ──────────────────────────── */
+/* ÔöÇÔöÇ CARD SHINE OVERLAY ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .card-shine {
   position: absolute;
   inset: 0;
@@ -887,19 +929,19 @@ body.page-exit {
   transition: background 0.1s;
 }
 
-/* ── PROJECT CARD — improved hover ──────────────── */
+/* ÔöÇÔöÇ PROJECT CARD ÔÇö improved hover ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .project-card {
   will-change: transform;
   transform-style: preserve-3d;
 }
 
-/* ── SCRAMBLE CHAR ───────────────────────────────── */
+/* ÔöÇÔöÇ SCRAMBLE CHAR ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .scramble-char {
   color: rgba(188, 217, 245, 0.5);
   display: inline-block;
 }
 
-/* ── TYPING CURSOR ───────────────────────────────── */
+/* ÔöÇÔöÇ TYPING CURSOR ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .typing-cursor {
   display: inline-block;
   color: var(--blue-light);
@@ -913,7 +955,7 @@ body.page-exit {
   50% { opacity: 0; }
 }
 
-/* ── LOGO GLITCH ─────────────────────────────────── */
+/* ÔöÇÔöÇ LOGO GLITCH ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .logo { position: relative; display: inline-block; }
 .logo.glitch {
   animation: glitch 0.6s steps(2) both;
@@ -927,7 +969,7 @@ body.page-exit {
   100% { text-shadow: none; }
 }
 
-/* ── HERO IMAGE — floating animation ─────────────── */
+/* ÔöÇÔöÇ HERO IMAGE ÔÇö floating animation ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .image-frame {
   animation: float 6s ease-in-out infinite;
 }
@@ -936,7 +978,7 @@ body.page-exit {
   50%       { transform: translateY(-10px); }
 }
 
-/* ── HERO BADGE — pulse glow ─────────────────────── */
+/* ÔöÇÔöÇ HERO BADGE ÔÇö pulse glow ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .hero-badge {
   animation: badgeGlow 3s ease-in-out infinite;
 }
@@ -945,7 +987,7 @@ body.page-exit {
   50%       { box-shadow: 0 0 16px 2px rgba(0,230,118,0.12); }
 }
 
-/* ── IMAGE BORDER — animated gradient ───────────── */
+/* ÔöÇÔöÇ IMAGE BORDER ÔÇö animated gradient ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .image-border {
   background: transparent;
   border: none;
@@ -957,7 +999,7 @@ body.page-exit {
   100% { box-shadow: 0 0 0 1px rgba(188,217,245,0.15),  0 0 30px rgba(27,79,255,0.08); }
 }
 
-/* ── SECTION TAG — animated line ────────────────── */
+/* ÔöÇÔöÇ SECTION TAG ÔÇö animated line ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .section-tag::before {
   animation: lineGrow 0.8s cubic-bezier(0.16,1,0.3,1) both;
   transform-origin: left;
@@ -967,7 +1009,7 @@ body.page-exit {
   to   { transform: scaleX(1); opacity: 0.6; }
 }
 
-/* ── FORM GROUP FOCUSED ──────────────────────────── */
+/* ÔöÇÔöÇ FORM GROUP FOCUSED ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .form-group.focused label { color: var(--blue-light); }
 .form-group.focused input,
 .form-group.focused textarea {
@@ -975,10 +1017,10 @@ body.page-exit {
   box-shadow: 0 0 0 3px rgba(188,217,245,0.1);
 }
 
-/* ── SPINNER ─────────────────────────────────────── */
+/* ÔöÇÔöÇ SPINNER ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── TIMELINE DOT — pulse on visible ────────────── */
+/* ÔöÇÔöÇ TIMELINE DOT ÔÇö pulse on visible ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .timeline-item.visible .timeline-dot {
   animation: dotPulse 2s ease-in-out infinite;
 }
@@ -987,20 +1029,20 @@ body.page-exit {
   50%       { box-shadow: 0 0 0 5px rgba(188,217,245,0.2); }
 }
 
-/* ── PROJECT LINK ARROW ──────────────────────────── */
+/* ÔöÇÔöÇ PROJECT LINK ARROW ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .project-link {
   position: relative;
   overflow: hidden;
 }
 .project-link::after {
-  content: '→';
+  content: 'ÔåÆ';
   position: absolute;
   right: -20px;
   transition: right 0.3s cubic-bezier(0.16,1,0.3,1);
 }
 .project-link:hover::after { right: 0; }
 
-/* ── STAT CARD — border shimmer ─────────────────── */
+/* ÔöÇÔöÇ STAT CARD ÔÇö border shimmer ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .stat-card {
   position: relative;
   overflow: hidden;
@@ -1019,7 +1061,7 @@ body.page-exit {
   transition: left 0.7s cubic-bezier(0.16,1,0.3,1);
 }
 
-/* ── BTN PRIMARY — enhanced glow on hover ────────── */
+/* ÔöÇÔöÇ BTN PRIMARY ÔÇö enhanced glow on hover ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .btn-primary {
   position: relative;
   overflow: hidden;
@@ -1038,7 +1080,7 @@ body.page-exit {
   transition: left 0.5s ease;
 }
 
-/* ── GRID OVERLAY — animated ─────────────────────── */
+/* ÔöÇÔöÇ GRID OVERLAY ÔÇö animated ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .grid-overlay {
   animation: gridFade 4s ease-in-out infinite alternate;
 }
@@ -1047,7 +1089,7 @@ body.page-exit {
   to   { opacity: 1; }
 }
 
-/* ── BLOB — enhanced animation ───────────────────── */
+/* ÔöÇÔöÇ BLOB ÔÇö enhanced animation ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .blob-1 { animation: blobFloat1 15s ease-in-out infinite alternate; }
 .blob-2 { animation: blobFloat2 20s ease-in-out infinite alternate-reverse; }
 
@@ -1063,20 +1105,20 @@ body.page-exit {
   100% { transform: scale(0.95) translate(15px, -15px); }
 }
 
-/* ── SCROLL HINT — enhanced ──────────────────────── */
+/* ÔöÇÔöÇ SCROLL HINT ÔÇö enhanced ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .scroll-hint { animation: fadeInUp 1s 2s both; }
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── SKILL BAR — gradient fill ──────────────────── */
+/* ÔöÇÔöÇ SKILL BAR ÔÇö gradient fill ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .skill-bar-fill {
   background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
   border-radius: 2px;
 }
 
-/* ── CONTACT LINK — animated icon ───────────────── */
+/* ÔöÇÔöÇ CONTACT LINK ÔÇö animated icon ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .link-icon {
   transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
@@ -1088,7 +1130,7 @@ body.page-exit {
   color: #fff;
 }
 
-/* ── FOOTER ──────────────────────────────────────── */
+/* ÔöÇÔöÇ FOOTER ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .footer { position: relative; }
 .footer::before {
   content: '';
@@ -1096,7 +1138,7 @@ body.page-exit {
   background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
-/* ── LOGICIEL CARD — icon color accents ─────────── */
+/* ÔöÇÔöÇ LOGICIEL CARD ÔÇö icon color accents ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .logiciel-card:hover .logiciel-icon {
   transform: scale(1.15) rotate(-3deg);
   transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
@@ -1106,7 +1148,7 @@ body.page-exit {
   transition: transform 0.4s, box-shadow 0.3s;
 }
 
-/* ── TIMELINE ITEM — slide in ────────────────────── */
+/* ÔöÇÔöÇ TIMELINE ITEM ÔÇö slide in ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .timeline-item {
   opacity: 0;
   transform: translateX(-20px);
@@ -1118,7 +1160,7 @@ body.page-exit {
   transform: translateX(0);
 }
 
-/* ── PROJECT HERO — ken burns ────────────────────── */
+/* ÔöÇÔöÇ PROJECT HERO ÔÇö ken burns ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 .projet-hero img {
   animation: kenBurns 12s ease-in-out infinite alternate;
 }
@@ -1127,7 +1169,7 @@ body.page-exit {
   to   { transform: scale(1) translate(-10px, -5px); }
 }
 
-/* ── SUCCESS POP ─────────────────────────────────── */
+/* ÔöÇÔöÇ SUCCESS POP ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ */
 @keyframes successPop {
   0%   { opacity: 0; transform: scale(0.8); }
   80%  { transform: scale(1.05); }
