@@ -416,12 +416,14 @@ body.page-loaded { animation: pageEnter 0.5s var(--transition) forwards; }
 @media (max-width: 1024px) {
   :root { --section-padding: 60px 6vw; }
   
-  .hero-inner { 
+  .hamburger { display: flex !important; }
+  
+  .hero-content { 
     display: flex !important;
     flex-direction: column !important;
     text-align: center !important;
-    gap: 30px !important;
-    padding-top: 80px !important;
+    gap: 40px !important;
+    padding-top: 40px !important;
     align-items: center !important;
   }
 
@@ -436,6 +438,9 @@ body.page-loaded { animation: pageEnter 0.5s var(--transition) forwards; }
     order: 2 !important;
     width: 100% !important;
   }
+  .hero-desc {
+    margin: 0 auto 32px !important;
+  }
 
   .image-frame { 
     width: 220px !important; 
@@ -444,18 +449,19 @@ body.page-loaded { animation: pageEnter 0.5s var(--transition) forwards; }
     box-shadow: 0 15px 40px rgba(0,0,0,0.4) !important;
   }
 
-  .hero-text h1 { 
+  .hero-title { 
     font-size: 2.2rem !important; 
     line-height: 1.2 !important; 
-    margin: 0 auto 20px !important;
-    width: 90% !important;
+    margin: 0 auto 24px !important;
+    width: 100% !important;
   }
 
-  .hero-btns { 
+  .hero-cta { 
     flex-direction: column !important; 
     width: 100% !important;
     max-width: 300px !important;
     margin: 0 auto !important;
+    gap: 12px !important;
   }
 
   /* Sections Home */
@@ -479,6 +485,8 @@ body.page-loaded { animation: pageEnter 0.5s var(--transition) forwards; }
   .mosaic-grid { grid-template-columns: 1fr; padding: 0 6vw; }
   .mosaic-item.wide, .mosaic-item.tall { grid-column: span 1; aspect-ratio: 1/1; }
   .orbital-container { min-height: 50vh !important; }
+  .marquee-track { gap: 40px !important; }
+  .navbar { padding: 16px 6vw !important; }
 }
 
 @media (max-width: 600px) {
