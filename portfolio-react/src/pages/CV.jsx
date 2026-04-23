@@ -163,7 +163,7 @@ export default function CV() {
                   <motion.div
                     initial={{ opacity: 0, rotateX: 45, rotateZ: -10, y: 100, scale: 0.8 }}
                     whileInView={{ opacity: 1, rotateX: 25, rotateZ: -12, y: 0, scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{ 
                       type: "spring",
                       stiffness: 40,
