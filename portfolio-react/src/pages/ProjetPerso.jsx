@@ -17,13 +17,11 @@ export default function ProjetPerso() {
     {
       tag: 'Posters & Illustrations', title: 'Cinéma & Créations',
       items: [
-        { src: `${baseUrl}images/projets-crea/ghilli.jpg`, alt: 'Ghilli Poster' },
-        { src: `${baseUrl}images/projets-crea/leo.png`, alt: 'Leo Poster' },
-        { src: `${baseUrl}images/projets-crea/ponniyin-selvan.png`, alt: 'PS Poster' },
-        { src: `${baseUrl}images/projets-crea/vaaranam-aayiram.png`, alt: 'VA Poster' },
-        { src: `${baseUrl}images/projets-crea/vaaranam-aayiram-2.png`, alt: 'VA Poster 2' },
-        { src: `${baseUrl}images/projets-crea/vickram.png`, alt: 'Vikram Poster' },
-        { src: `${baseUrl}images/projets-crea/vickram-2.png`, alt: 'Vikram Poster 2' },
+        { src: `${baseUrl}images/projets-crea/captain-miller.png`, alt: 'Captain Miller Poster' },
+        { src: `${baseUrl}images/projets-crea/kok-poster.jpg`, alt: 'KOK Poster' },
+        { src: `${baseUrl}images/projets-crea/kok-car.png`, alt: 'KOK Car Design' },
+        { src: `${baseUrl}images/projets-crea/animal.png`, alt: 'Animal Poster' },
+        { src: `${baseUrl}images/projets-crea/cover-magazine.jpeg`, alt: 'Cover Magazine' },
       ]
     }
   ]
