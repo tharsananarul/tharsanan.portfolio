@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Bike, Camera, Car, Zap, ArrowRight, X } from 'lucide-react'
+import { Bike, Camera, Car, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { useRef, Suspense, useState, useEffect } from 'react'
+import { useRef, Suspense, useState, useEffect, useMemo, useCallback } from 'react'
 import * as THREE from 'three'
 import { Float, Environment } from '@react-three/drei'
 
@@ -60,51 +60,81 @@ const passions = [
   }
 ]
 
+// Photo data: thumbnail for grid, full for lightbox
+const PHOTO_DATA = [
+  { file: 'IMG_1717', ext: 'jpg' },
+  { file: 'IMG_1718', ext: 'jpg' },
+  { file: 'IMG_1727', ext: 'jpg' },
+  { file: 'IMG_1729', ext: 'jpg' },
+  { file: 'IMG_1693', ext: 'jpg' },
+  { file: 'IMG_0909', ext: 'jpg' },
+  { file: 'IMG_0910', ext: 'jpg' },
+  { file: 'IMG_2811', ext: 'jpg' },
+  { file: 'IMG_2812', ext: 'jpg' },
+  { file: 'IMG_2813', ext: 'jpg' },
+  { file: '053a153c-0145-46ee-b38e-17f9cf95a3c3', ext: 'jpg' },
+  { file: '898500a0-9c3b-4ccd-9abe-c54dfdf14969', ext: 'jpg' },
+  { file: 'IMG_0915 (1)', ext: 'jpg' },
+]
+
 export default function PassionSection() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(null)
+  const scrollRef = useRef(null)
   const baseUrl = import.meta.env.BASE_URL
 
-  // Lock scroll when gallery is open
+  // Lock scroll when gallery or lightbox is open
   useEffect(() => {
     if (isGalleryOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'unset'
+      setLightboxIndex(null)
     }
     return () => { document.body.style.overflow = 'unset' }
   }, [isGalleryOpen])
 
-  const photos = useMemo(() => [
-    `${baseUrl}images/photographie/IMG_1717.jpg`,
-    `${baseUrl}images/photographie/IMG_1718.jpg`,
-    `${baseUrl}images/photographie/IMG_1727.jpg`,
-    `${baseUrl}images/photographie/IMG_1729.jpg`,
-    `${baseUrl}images/photographie/IMG_1693.jpg`,
-    `${baseUrl}images/photographie/IMG_0909.jpg`,
-    `${baseUrl}images/photographie/IMG_0910.jpg`,
-    `${baseUrl}images/photographie/IMG_2811.jpg`,
-    `${baseUrl}images/photographie/IMG_2812.jpg`,
-    `${baseUrl}images/photographie/IMG_2813.jpg`,
-    `${baseUrl}images/photographie/053a153c-0145-46ee-b38e-17f9cf95a3c3.jpg`,
-    `${baseUrl}images/photographie/898500a0-9c3b-4ccd-9abe-c54dfdf14969.jpg`,
-    `${baseUrl}images/photographie/IMG_0915 (1).jpg`
-  ], [baseUrl])
+  // Reset scroll to top when gallery opens
+  useEffect(() => {
+    if (isGalleryOpen && scrollRef.current) {
+      scrollRef.current.scrollTop = 0
+    }
+  }, [isGalleryOpen])
+
+  // Keyboard nav for lightbox
+  useEffect(() => {
+    if (lightboxIndex === null) return
+    const handleKey = (e) => {
+      if (e.key === 'ArrowRight') setLightboxIndex(i => (i + 1) % PHOTO_DATA.length)
+      if (e.key === 'ArrowLeft') setLightboxIndex(i => (i - 1 + PHOTO_DATA.length) % PHOTO_DATA.length)
+      if (e.key === 'Escape') setLightboxIndex(null)
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [lightboxIndex])
+
+  const getThumb = useCallback((photo) => {
+    return `${baseUrl}images/photographie/thumbs/${photo.file}.webp`
+  }, [baseUrl])
+
+  const getFull = useCallback((photo) => {
+    return `${baseUrl}images/photographie/${photo.file}.${photo.ext}`
+  }, [baseUrl])
 
   return (
     <section className="relative py-32 overflow-hidden bg-transparent border-y border-white/5">
-      {/* Background 3D Elements - Hidden when gallery is open to save resources */}
-      <motion.div 
-        animate={{ opacity: isGalleryOpen ? 0 : 0.3 }}
-        className="absolute inset-0 pointer-events-none"
-      >
-        <Canvas camera={{ position: [0, 0, 20], fov: 50 }} dpr={[1, 1.5]}>
-          <Suspense fallback={null}>
-            <ambientLight intensity={0.5} />
-            <Car3D />
-            <Environment preset="city" />
-          </Suspense>
-        </Canvas>
-      </motion.div>
+      {/* Background 3D Elements */}
+      {!isGalleryOpen && (
+        <div className="absolute inset-0 pointer-events-none opacity-30">
+          <Canvas camera={{ position: [0, 0, 20], fov: 50 }} dpr={[1, 1.5]}>
+            <Suspense fallback={null}>
+              <ambientLight intensity={0.5} />
+              <Car3D />
+              <Environment preset="city" />
+            </Suspense>
+          </Canvas>
+        </div>
+      )}
 
       <div className="section-container relative z-10">
         <div className="max-w-3xl mb-20">
@@ -167,46 +197,99 @@ export default function PassionSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 bg-primary/98 backdrop-blur-2xl"
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[100] bg-[#010409]/98 backdrop-blur-2xl"
           >
-            <motion.button 
-              initial={{ scale: 0, rotate: -90 }}
-              animate={{ scale: 1, rotate: 0 }}
-              onClick={() => setIsGalleryOpen(false)}
-              className="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-accent-light transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full z-[110]"
-            >
-              <X size={24} />
-            </motion.button>
+            {/* Header */}
+            <div className="absolute top-0 left-0 right-0 z-[110] flex items-center justify-between px-6 md:px-10 py-5 bg-gradient-to-b from-black/60 to-transparent">
+              <div>
+                <p className="text-white font-bold text-sm md:text-lg tracking-tight">Galerie Photographique</p>
+                <p className="text-white/40 text-[10px] md:text-xs font-medium">{PHOTO_DATA.length} photos · Cliquez pour agrandir</p>
+              </div>
+              <button 
+                onClick={() => setIsGalleryOpen(false)}
+                className="text-white hover:text-accent-light transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
+              >
+                <X size={20} />
+              </button>
+            </div>
 
-            <div className="w-full max-w-7xl h-full flex flex-col justify-center">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 overflow-y-auto max-h-[85vh] p-4 custom-scrollbar">
-                {photos.map((photo, index) => (
-                  <motion.div
+            {/* Thumbnail Grid - uses lightweight WebP thumbs */}
+            <div 
+              ref={scrollRef}
+              className="h-full pt-24 pb-8 px-4 md:px-10 overflow-y-auto"
+              style={{ scrollBehavior: 'smooth' }}
+            >
+              <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+                {PHOTO_DATA.map((photo, index) => (
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    className="aspect-square rounded-3xl overflow-hidden border border-white/5 bg-white/5 group relative"
+                    className="aspect-square rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 bg-white/5 group relative cursor-pointer"
+                    onClick={() => setLightboxIndex(index)}
                   >
                     <img 
-                      src={photo} 
-                      alt={`Travail photographique ${index + 1}`} 
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      src={getThumb(photo)} 
+                      alt={`Photo ${index + 1}`} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                     />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </motion.div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                      <Camera size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </div>
                 ))}
               </div>
-              <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="text-center mt-8 text-text-muted font-medium tracking-wide uppercase text-[10px]"
-              >
-                — Galerie Photographique —
-              </motion.p>
             </div>
+
+            {/* Full-size Lightbox */}
+            <AnimatePresence>
+              {lightboxIndex !== null && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="fixed inset-0 z-[120] bg-black/95 flex items-center justify-center"
+                  onClick={() => setLightboxIndex(null)}
+                >
+                  <button 
+                    className="absolute top-6 right-6 text-white hover:text-accent-light p-3 bg-white/10 rounded-full z-[130]"
+                    onClick={(e) => { e.stopPropagation(); setLightboxIndex(null) }}
+                  >
+                    <X size={20} />
+                  </button>
+
+                  <button 
+                    className="absolute left-4 md:left-8 p-3 md:p-4 rounded-full bg-white/10 hover:bg-white/20 text-white z-[130]"
+                    onClick={(e) => { e.stopPropagation(); setLightboxIndex(i => (i - 1 + PHOTO_DATA.length) % PHOTO_DATA.length) }}
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+
+                  <motion.img
+                    key={lightboxIndex}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                    src={getFull(PHOTO_DATA[lightboxIndex])}
+                    alt={`Photo ${lightboxIndex + 1}`}
+                    className="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+
+                  <button 
+                    className="absolute right-4 md:right-8 p-3 md:p-4 rounded-full bg-white/10 hover:bg-white/20 text-white z-[130]"
+                    onClick={(e) => { e.stopPropagation(); setLightboxIndex(i => (i + 1) % PHOTO_DATA.length) }}
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+
+                  <div className="absolute bottom-6 px-6 py-2 rounded-full bg-white/10 text-white/60 text-xs font-bold">
+                    {lightboxIndex + 1} / {PHOTO_DATA.length}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
