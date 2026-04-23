@@ -120,32 +120,25 @@ export default function MosaicGrid({ sections, animate = true }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[200] bg-black/98 flex flex-col touch-none"
-            onClick={(e) => { if (e.target === e.currentTarget) closeLb() }}
+            className="fixed inset-0 z-[200] bg-black/98 overflow-hidden touch-none"
+            style={{ height: '100dvh' }}
+            onClick={closeLb}
           >
-            {/* Top bar — always visible */}
-            <div className="flex items-center justify-between p-4 md:p-6 flex-shrink-0 z-[220]">
-              <div className="px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white/70 text-[10px] font-bold border border-white/5 uppercase tracking-widest">
-                {lbIndex + 1} / {lbImages.length}
-              </div>
-              <button 
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
-                onClick={closeLb}
-              >
-                <X size={20} />
-              </button>
+            {/* Close button — fixed top-right, always visible */}
+            <button 
+              className="fixed top-4 right-4 z-[250] p-3 rounded-full bg-white/15 hover:bg-white/25 transition-colors text-white backdrop-blur-md border border-white/10"
+              onClick={(e) => { e.stopPropagation(); closeLb() }}
+            >
+              <X size={20} />
+            </button>
+
+            {/* Counter — fixed top-left */}
+            <div className="fixed top-4 left-4 z-[250] px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white/70 text-[10px] font-bold border border-white/5 uppercase tracking-widest">
+              {lbIndex + 1} / {lbImages.length}
             </div>
-            
-            {/* Image area — centered */}
-            <div className="relative flex-1 flex items-center justify-center px-2 pb-4 md:px-12 md:pb-12 min-h-0">
-              {/* Prev */}
-              <button 
-                className="absolute left-2 md:left-8 p-3 md:p-5 rounded-full bg-white/5 hover:bg-white/10 transition-all text-white z-10 border border-white/5"
-                onClick={() => navigate(-1)}
-              >
-                <ChevronLeft size={20} />
-              </button>
-              
+
+            {/* Image — perfectly centered */}
+            <div className="absolute inset-0 flex items-center justify-center p-12 md:p-16">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={lbIndex}
@@ -153,25 +146,31 @@ export default function MosaicGrid({ sections, animate = true }) {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.25 }}
-                  className="flex items-center justify-center max-w-full max-h-full"
+                  className="flex items-center justify-center"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <img
                     src={lbImages[lbIndex]?.src}
                     alt={lbImages[lbIndex]?.alt || ''}
-                    className="max-w-[85vw] max-h-[70vh] md:max-w-[75vw] md:max-h-[80vh] object-contain rounded-xl shadow-2xl border border-white/5"
+                    className="max-w-[85vw] max-h-[65dvh] md:max-w-[70vw] md:max-h-[75dvh] object-contain rounded-xl shadow-2xl border border-white/5"
                   />
                 </motion.div>
               </AnimatePresence>
-
-              {/* Next */}
-              <button 
-                className="absolute right-2 md:right-8 p-3 md:p-5 rounded-full bg-white/5 hover:bg-white/10 transition-all text-white z-10 border border-white/5"
-                onClick={() => navigate(1)}
-              >
-                <ChevronRight size={20} />
-              </button>
             </div>
+
+            {/* Nav arrows — fixed center-left and center-right */}
+            <button 
+              className="fixed left-2 md:left-6 top-1/2 -translate-y-1/2 z-[250] p-3 md:p-4 rounded-full bg-white/10 hover:bg-white/20 transition-all text-white border border-white/5 backdrop-blur-md"
+              onClick={(e) => { e.stopPropagation(); navigate(-1) }}
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button 
+              className="fixed right-2 md:right-6 top-1/2 -translate-y-1/2 z-[250] p-3 md:p-4 rounded-full bg-white/10 hover:bg-white/20 transition-all text-white border border-white/5 backdrop-blur-md"
+              onClick={(e) => { e.stopPropagation(); navigate(1) }}
+            >
+              <ChevronRight size={18} />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
