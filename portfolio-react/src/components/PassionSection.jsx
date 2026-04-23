@@ -200,43 +200,45 @@ export default function PassionSection() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-[100] bg-[#010409]/98 backdrop-blur-2xl"
           >
-            {/* Header */}
-            <div className="absolute top-0 left-0 right-0 z-[110] flex items-center justify-between px-6 md:px-10 py-5 bg-gradient-to-b from-black/60 to-transparent">
-              <div>
-                <p className="text-white font-bold text-sm md:text-lg tracking-tight">Galerie Photographique</p>
-                <p className="text-white/40 text-[10px] md:text-xs font-medium">{PHOTO_DATA.length} photos · Cliquez pour agrandir</p>
+            {/* Gallery content - flex column so header stays on top */}
+            <div className="flex flex-col h-full">
+              {/* Header - in flow, not overlapping */}
+              <div className="flex items-center justify-between px-6 md:px-10 py-5 shrink-0">
+                <div>
+                  <p className="text-white font-bold text-sm md:text-lg tracking-tight">Galerie Photographique</p>
+                  <p className="text-white/40 text-[10px] md:text-xs font-medium">{PHOTO_DATA.length} photos · Cliquez pour agrandir</p>
+                </div>
+                <button 
+                  onClick={() => setIsGalleryOpen(false)}
+                  className="text-white hover:text-accent-light transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
+                >
+                  <X size={20} />
+                </button>
               </div>
-              <button 
-                onClick={() => setIsGalleryOpen(false)}
-                className="text-white hover:text-accent-light transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
-              >
-                <X size={20} />
-              </button>
-            </div>
 
-            {/* Thumbnail Grid - uses lightweight WebP thumbs */}
-            <div 
-              ref={scrollRef}
-              className="h-full pt-24 pb-8 px-4 md:px-10 overflow-y-auto"
-              style={{ scrollBehavior: 'smooth' }}
-            >
-              <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-                {PHOTO_DATA.map((photo, index) => (
-                  <div
-                    key={index}
-                    className="aspect-square rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 bg-white/5 group relative cursor-pointer"
-                    onClick={() => setLightboxIndex(index)}
-                  >
-                    <img 
-                      src={getThumb(photo)} 
-                      alt={`Photo ${index + 1}`} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                      <Camera size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Thumbnail Grid */}
+              <div 
+                ref={(el) => { if (el) el.scrollTop = 0 }}
+                className="flex-1 overflow-y-auto px-4 md:px-10 pb-8"
+              >
+                <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+                  {PHOTO_DATA.map((photo, index) => (
+                    <div
+                      key={index}
+                      className="aspect-square rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 bg-white/5 group relative cursor-pointer"
+                      onClick={() => setLightboxIndex(index)}
+                    >
+                      <img 
+                        src={getThumb(photo)} 
+                        alt={`Photo ${index + 1}`} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                        <Camera size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 

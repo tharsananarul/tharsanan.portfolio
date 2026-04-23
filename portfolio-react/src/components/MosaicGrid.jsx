@@ -76,16 +76,29 @@ export default function MosaicGrid({ sections, animate = true }) {
                   } ${item.wide ? 'md:col-span-2 md:aspect-auto' : ''}`}
                   onClick={() => openLb(section.items, idx)}
                 >
+                  {/* Skeleton */}
                   <div className="absolute inset-0 bg-white/5 animate-pulse" />
+                  
                   <img
                     src={item.src}
                     alt={item.alt || ''}
-                    className="relative z-10 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 opacity-0"
+                    className="relative z-10 w-full h-full object-cover transition-opacity duration-700 group-hover:scale-105"
                     loading="lazy"
                     onLoad={(e) => {
                       e.target.style.opacity = '1';
-                      e.target.previousSibling.style.display = 'none';
+                      // Hide skeleton (the div right before the img)
+                      const skeleton = e.target.previousSibling;
+                      if (skeleton) skeleton.style.display = 'none';
                     }}
+                    // Ensure it shows even if cached
+                    ref={(img) => {
+                      if (img && img.complete) {
+                        img.style.opacity = '1';
+                        const skeleton = img.previousSibling;
+                        if (skeleton) skeleton.style.display = 'none';
+                      }
+                    }}
+                    style={{ opacity: 0 }}
                   />
                   <div className="absolute inset-0 z-20 bg-accent/20 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-[2px]">
                     <div className="p-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 transform scale-50 group-hover:scale-100 transition-transform duration-500">

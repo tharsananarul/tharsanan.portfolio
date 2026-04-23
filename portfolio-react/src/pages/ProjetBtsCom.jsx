@@ -17,12 +17,14 @@ export default function ProjetBtsCom() {
     {
       tag: 'Print & Branding', title: 'Mockups & Com Visuelle',
       items: [
-        { src: `${baseUrl}images/bts-com/1.png`, alt: 'Design 1' },
-        { src: `${baseUrl}images/bts-com/2.png`, alt: 'Design 2' },
-        { src: `${baseUrl}images/bts-com/3.png`, alt: 'Design 3' },
-        { src: `${baseUrl}images/bts-com/4.png`, alt: 'Design 4' },
-        { src: `${baseUrl}images/bts-com/5.png`, alt: 'Design 5' },
-        { src: `${baseUrl}images/bts-com/6.png`, alt: 'Design 6' },
+        { src: `${baseUrl}images/bts-com/kakemono.jpg`, alt: 'Kakemono BTS Com' },
+        { src: `${baseUrl}images/bts-com/affichea0.jpg`, alt: 'Affiche A0' },
+        { src: `${baseUrl}images/bts-com/affiche-inscription.jpg`, alt: 'Affiche Inscription' },
+        { src: `${baseUrl}images/bts-com/expo-com.jpg`, alt: 'Expo Com' },
+        { src: `${baseUrl}images/bts-com/newsletter.jpg`, alt: 'Newsletter' },
+        { src: `${baseUrl}images/bts-com/sdcipost.jpg`, alt: 'Post SDCI' },
+        { src: `${baseUrl}images/bts-com/kakemono-mockup.jpg`, alt: 'Mockup Kakemono' },
+        { src: `${baseUrl}images/bts-com/affichea0mockup.jpg`, alt: 'Mockup Affiche' },
       ]
     }
   ]
