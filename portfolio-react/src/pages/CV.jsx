@@ -114,7 +114,7 @@ export default function CV() {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <Magnetic>
-              <a href="/cv-v3.pdf" download className="btn-premium gap-3 text-lg px-10 py-5 group">
+              <a href="cv-v3.pdf" download className="btn-premium gap-3 text-lg px-10 py-5 group">
                 <Download size={22} className="group-hover:translate-y-1 transition-transform" /> 
                 Télécharger mon CV
               </a>
