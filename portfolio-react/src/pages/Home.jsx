@@ -182,15 +182,15 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            initial={{ opacity: 0, x: 100, scale: 0.8, rotate: 5 }}
+            animate={{ opacity: 1, x: 0, scale: 1, rotate: 0 }}
+            transition={{ type: "spring", stiffness: 50, damping: 20, delay: 0.2 }}
             className="relative flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
             <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full max-w-[400px] sm:max-w-[550px] lg:max-w-[800px] xl:max-w-[900px] group scale-110 lg:scale-125 origin-center lg:origin-right lg:translate-x-20 xl:translate-x-32"
+              animate={{ y: [0, -30, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-full max-w-[240px] sm:max-w-[320px] lg:max-w-[800px] xl:max-w-[900px] group scale-110 lg:scale-125 origin-center lg:origin-right lg:translate-x-20 xl:translate-x-32"
               style={{ 
                 x: mousePos.x * 0.5, 
                 y: mousePos.y * 0.5,
