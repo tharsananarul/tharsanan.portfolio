@@ -178,7 +178,7 @@ export default function CV() {
                     {/* The Flyer itself */}
                     <div className="relative w-64 md:w-80 rounded-sm overflow-hidden border border-white/10 shadow-2xl transition-all duration-700 group-hover:rotate-x-0 group-hover:rotate-z-0 group-hover:scale-105 group-hover:-translate-y-10">
                       <img 
-                        src={`${import.meta.env.BASE_URL}images/site/cv-preview.png`} 
+                        src={`${import.meta.env.BASE_URL}images/site/cv-preview-v2.png`} 
                         alt="CV Miniature Realistic" 
                         className="w-full h-auto"
                       />
