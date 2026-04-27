@@ -284,7 +284,7 @@ form?.addEventListener('submit', (e) => {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
   
-  fetch("https://formsubmit.co/ajax/tharsananarul@gmail.com", {
+  fetch("https://formsubmit.co/ajax/412d984908829a738c7bafb37a72fb4c", {
     method: "POST",
     headers: { 
       "Content-Type": "application/json",
