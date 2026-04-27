@@ -25,15 +25,16 @@ export default function Contact() {
         body: JSON.stringify(data),
       })
 
-      const result = await response.json()
-
-      if (result.success === "true") {
+      if (response.ok) {
         setStatus('success')
         e.target.reset()
       } else {
+        const errorData = await response.json()
+        console.error('FormSubmit Error:', errorData)
         setStatus('error')
       }
     } catch (error) {
+      console.error('Fetch Error:', error)
       setStatus('error')
     }
   }

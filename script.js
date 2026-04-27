@@ -292,9 +292,8 @@ form?.addEventListener('submit', (e) => {
     },
     body: JSON.stringify(data),
   })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success === "true") {
+  .then(response => {
+    if (response.ok) {
       form.reset();
       btn.style.display = 'none';
       if (success) success.classList.add('show');
