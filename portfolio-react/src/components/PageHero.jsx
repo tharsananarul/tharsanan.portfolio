@@ -13,7 +13,7 @@ import { motion } from 'framer-motion'
  */
 export default function PageHero({ tag, title, subtitle, compact = false }) {
   return (
-    <section className={`relative overflow-hidden ${compact ? 'pt-28 pb-12 md:pt-40 md:pb-20' : 'pt-28 pb-16 md:pt-40 md:pb-28'}`}>
+    <section className={`relative overflow-hidden ${compact ? 'pt-24 pb-4 md:pt-32 md:pb-6' : 'pt-28 pb-16 md:pt-40 md:pb-28'}`}>
       {/* Decorative background layers */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Radial gradient glow */}
