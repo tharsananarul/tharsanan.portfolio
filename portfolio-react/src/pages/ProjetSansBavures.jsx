@@ -108,7 +108,7 @@ export default function ProjetSansBavures() {
       </section>
 
       {/* Gallery */}
-      <MosaicGrid sections={sections} />
+      <MosaicGrid sections={sections} accentColor="#8b5cf6" />
 
       {/* Next Project */}
       <section className="section-container py-32 border-t border-white/5">

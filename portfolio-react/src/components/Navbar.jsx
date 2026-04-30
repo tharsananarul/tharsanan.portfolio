@@ -60,13 +60,13 @@ const LogoScramble = () => {
   return (
     <Link 
       to="/" 
-      className="logo group p-2 min-w-[40px] inline-block"
+      className="logo group p-2.5 min-w-[55px] inline-flex items-center justify-center bg-white border-2 md:border-4 border-black shadow-[4px_4px_0_0_#000] rotate-[-2deg] hover:rotate-0 hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className="font-heading font-extrabold tracking-tighter text-white">
+      <span className="font-heading font-black text-3xl md:text-5xl tracking-tighter text-black uppercase leading-none select-none">
         {text}
-        <span className="text-accent-light">.</span>
+        <span className="text-[var(--color-creative-pink)]">.</span>
       </span>
     </Link>
   )
@@ -91,7 +91,7 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = ''
     }
-    return () => { document.body.style.overflow = '' }
+    return () => document.body.style.overflow = ''
   }, [isOpen])
 
   useEffect(() => {
@@ -101,10 +101,10 @@ export default function Navbar() {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-[5vw] transition-all duration-700 ease-[0.16,1,0.3,1] ${
+      className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-[5vw] transition-all duration-700 ease-[0.16,1,0.36,1] ${
         scrolled 
-          ? 'bg-[#080e1a] border-b border-white/10 py-3 md:py-5 shadow-2xl' 
-          : 'bg-transparent py-6 md:py-12'
+          ? 'bg-black border-b-2 border-white/5 py-2 md:py-4 shadow-2xl' 
+          : 'bg-transparent py-4 md:py-8'
       }`}
     >
       {/* Logo */}
@@ -115,33 +115,36 @@ export default function Navbar() {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-10">
         <div className="flex items-center gap-8 nav-links">
-          {navLinks.map((link) => (
+          {navLinks.map((link, i) => {
+            const colors = ['cyan', 'pink', 'yellow', 'green'];
+            const color = colors[i % colors.length];
+            return (
             <Magnetic key={link.name}>
               <Link
                 to={link.path}
-                className={`text-sm font-bold tracking-tight transition-all duration-300 hover:text-white relative group p-2 ${
-                  location.pathname === link.path ? 'text-white' : 'text-text-muted'
+                className={`text-xs font-black uppercase tracking-widest transition-all duration-300 relative group p-2 ${
+                  location.pathname === link.path ? `text-[var(--color-creative-${color})]` : `text-white hover:text-[var(--color-creative-${color})]`
                 }`}
               >
                 {link.name}
-                <span className={`absolute bottom-1 left-2 h-px bg-accent-light transition-all duration-500 ${
+                <span className={`absolute bottom-1 left-2 h-[2px] bg-[var(--color-creative-${color})] transition-all duration-500 ${
                   location.pathname === link.path ? 'w-[calc(100%-16px)]' : 'w-0 group-hover:w-[calc(100%-16px)]'
                 }`} />
               </Link>
             </Magnetic>
-          ))}
+          )})}
         </div>
         
         <div className="w-px h-4 bg-white/10 mx-2" />
         
         <div className="flex items-center gap-5">
           <Magnetic>
-            <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-text-muted hover:text-white transition-all p-2" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/tharsanan-arulananthaselvam/" target="_blank" rel="noreferrer" className="text-text-muted hover:text-white transition-all p-2" title="LinkedIn">
               <Linkedin size={20} />
             </a>
           </Magnetic>
           <Magnetic>
-            <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-text-muted hover:text-white transition-all p-2" title="GitHub (Redirects to LinkedIn)">
+            <a href="https://github.com/tharsananarul" target="_blank" rel="noreferrer" className="text-text-muted hover:text-white transition-all p-2" title="GitHub">
               <Github size={20} />
             </a>
           </Magnetic>
@@ -179,11 +182,14 @@ export default function Navbar() {
               exit={{ x: '100%' }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               style={{ willChange: 'transform' }}
-              className="fixed top-0 right-0 bottom-0 w-[65%] sm:w-64 bg-[#0d1525] z-[105] flex flex-col shadow-[-10px_0_40px_rgba(0,0,0,0.9)] md:hidden border-l border-white/10"
+              className="fixed top-0 right-0 bottom-0 w-1/2 bg-[var(--color-secondary)] z-[105] flex flex-col shadow-[-10px_0_40px_rgba(0,0,0,0.9)] md:hidden border-l-4 border-black"
             >
-              <div className="flex flex-col p-8 pt-24 gap-6">
-                <p className="text-accent-light font-black tracking-[0.4em] uppercase text-[8px] mb-4 opacity-40">Menu</p>
-                {navLinks.map((link, i) => (
+            <div className="flex flex-col p-6 pt-24 gap-6 items-center text-center">
+              <p className="text-accent-light font-black tracking-[0.4em] uppercase text-sm mb-2 opacity-80">Menu</p>
+                {navLinks.map((link, i) => {
+                  const colors = ['cyan', 'pink', 'yellow', 'green'];
+                  const color = colors[i % colors.length];
+                  return (
                   <motion.div
                     key={link.name}
                     initial={{ opacity: 0, x: 15 }}
@@ -192,28 +198,36 @@ export default function Navbar() {
                   >
                     <Link
                       to={link.path}
-                      className={`text-[10px] font-black tracking-[0.3em] uppercase block py-2 transition-all duration-300 ${
+                      style={{ color: `var(--color-creative-${color})` }}
+                      className={`text-base sm:text-lg font-heading font-black uppercase tracking-tighter block py-2 transition-all duration-500 ${
                         location.pathname === link.path 
-                          ? 'text-accent-light' 
-                          : 'text-white/40 hover:text-white'
+                          ? `scale-110` 
+                          : `hover:scale-105`
                       }`}
                     >
                       {link.name}
+                      {location.pathname === link.path && (
+                        <motion.span 
+                          layoutId="mobile-active-dot"
+                          style={{ backgroundColor: `var(--color-creative-${color})` }}
+                          className="inline-block w-2 h-2 rounded-full ml-4"
+                        />
+                      )}
                     </Link>
                   </motion.div>
-                ))}
+                )})}
               </div>
               
-              <div className="mt-auto p-8 border-t border-white/5 bg-[#080e1a]/50">
+              <div className="mt-auto p-8 border-t-4 border-black bg-[var(--color-primary)]">
                 <div className="flex items-center gap-6 mb-8">
-                  <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-white/30 hover:text-white transition-colors">
-                    <Linkedin size={18} />
+                  <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-white hover:text-[var(--color-creative-cyan)] transition-colors">
+                    <Linkedin size={24} />
                   </a>
-                  <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-white/30 hover:text-white transition-colors">
-                    <Github size={18} />
+                  <a href="https://github.com/tharsananarul" target="_blank" rel="noreferrer" className="text-white hover:text-[var(--color-creative-pink)] transition-colors">
+                    <Github size={24} />
                   </a>
                 </div>
-                <p className="text-white/15 font-black tracking-[0.2em] uppercase text-[7px] leading-relaxed">
+                <p className="text-white/60 font-black tracking-[0.2em] uppercase text-[9px] leading-relaxed">
                   © 2026 THARSANAN
                 </p>
               </div>

@@ -62,11 +62,25 @@ export default function Projets() {
     <main className="relative pb-20 bg-transparent min-h-screen overflow-hidden">
       <PageHero
         tag="Réalisations"
-        title={<>Découvrez <br /><span className="highlight italic">mon univers.</span></>}
+        title={<>Découvrez <br /><span className="text-[var(--color-creative-yellow)] uppercase font-black" style={{ WebkitTextStroke: '1px white' }}>mon univers.</span></>}
         subtitle="Une collection de projets variés, allant du design d'interface à la stratégie de communication, illustrant ma polyvalence et ma passion pour la création."
+        themeColor="yellow"
       />
 
-      <section className="section-container relative z-10">
+
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 pointer-events-none -z-10 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+
+
+      <section className="section-container relative z-10 -mt-10 md:-mt-20">
+
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-[var(--color-creative-yellow)] rounded-full blur-[140px] opacity-[0.05] -z-10" />
+
+        {/* Stickers - Hidden on mobile to prevent overlapping */}
+        <div className="hidden md:block sticker-shape sticker-cyan absolute top-60 -left-10 rotate-[-10deg] z-20">Creative</div>
+        <div className="hidden md:block sticker-shape sticker-pink absolute bottom-60 -right-10 rotate-[15deg] z-20">Design</div>
+
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10">
           {projects.map((project, i) => (
             <motion.div
@@ -76,8 +90,8 @@ export default function Projets() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.05, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Link to={project.path} className="group flex flex-col bg-card/30 border border-white/5 rounded-[2rem] overflow-hidden hover:border-accent-light/30 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/5">
-                <div className="aspect-[16/10] overflow-hidden relative">
+              <Link to={project.path} className="group flex flex-col bg-[var(--color-primary)] border-4 border-black rounded-none overflow-hidden hover:translate-x-1 hover:translate-y-1 transition-all duration-300 shadow-[8px_8px_0_0_var(--color-creative-yellow)] hover:shadow-[4px_4px_0_0_var(--color-creative-yellow)]">
+                <div className="aspect-[16/10] overflow-hidden relative border-b-4 border-black">
                   <img 
                     src={`${baseUrl}${project.img}`} 
                     alt={project.title} 

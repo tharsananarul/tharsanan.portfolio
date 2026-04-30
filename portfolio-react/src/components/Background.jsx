@@ -1,118 +1,29 @@
-import { Canvas, useFrame } from '@react-three/fiber'
-import { useRef, useMemo, Suspense } from 'react'
-import * as THREE from 'three'
-
-function VantaNet() {
-  const pointsRef = useRef()
-  const linesRef = useRef()
-  const count = 60 // Number of particles (keep it low for performance and minimal look)
-  
-  // Initialize particles with random positions and velocities
-  const particles = useMemo(() => {
-    const temp = []
-    for (let i = 0; i < count; i++) {
-      temp.push({
-        position: new THREE.Vector3(
-          (Math.random() - 0.5) * 40,
-          (Math.random() - 0.5) * 40,
-          (Math.random() - 0.5) * 40
-        ),
-        velocity: new THREE.Vector3(
-          (Math.random() - 0.5) * 0.05,
-          (Math.random() - 0.5) * 0.05,
-          (Math.random() - 0.5) * 0.05
-        )
-      })
-    }
-    return temp
-  }, [])
-
-  useFrame((state) => {
-    const positions = new Float32Array(count * 3)
-    const linePositions = []
-    const mouse = {
-      x: (state.mouse.x * 20),
-      y: (state.mouse.y * 20)
-    }
-
-    particles.forEach((p, i) => {
-      // Move particles
-      p.position.add(p.velocity)
-
-      // Boundary check
-      if (Math.abs(p.position.x) > 25) p.velocity.x *= -1
-      if (Math.abs(p.position.y) > 25) p.velocity.y *= -1
-      if (Math.abs(p.position.z) > 25) p.velocity.z *= -1
-
-      // Mouse attraction (subtle)
-      const distToMouse = p.position.distanceTo(new THREE.Vector3(mouse.x, mouse.y, 0))
-      if (distToMouse < 10) {
-        p.position.lerp(new THREE.Vector3(mouse.x, mouse.y, 0), 0.01)
-      }
-
-      positions[i * 3] = p.position.x
-      positions[i * 3 + 1] = p.position.y
-      positions[i * 3 + 2] = p.position.z
-
-      // Find neighbors for lines
-      for (let j = i + 1; j < count; j++) {
-        const dist = p.position.distanceTo(particles[j].position)
-        if (dist < 8) {
-          linePositions.push(p.position.x, p.position.y, p.position.z)
-          linePositions.push(particles[j].position.x, particles[j].position.y, particles[j].position.z)
-        }
-      }
-    })
-
-    pointsRef.current.geometry.attributes.position.array = positions
-    pointsRef.current.geometry.attributes.position.needsUpdate = true
-
-    linesRef.current.geometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3))
-  })
-
-  return (
-    <group>
-      <points ref={pointsRef}>
-        <bufferGeometry>
-          <bufferAttribute 
-            attach="attributes-position" 
-            count={count} 
-            array={new Float32Array(count * 3)} 
-            itemSize={3} 
-          />
-        </bufferGeometry>
-        <pointsMaterial size={0.2} color="#1B4FFF" transparent opacity={0.6} sizeAttenuation />
-      </points>
-      
-      <lineSegments ref={linesRef}>
-        <bufferGeometry />
-        <lineBasicMaterial color="#1B4FFF" transparent opacity={0.15} />
-      </lineSegments>
-    </group>
-  )
-}
+import { useEffect, useRef } from 'react'
 
 export default function Background() {
-  return (
-    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-primary">
-      <div className="absolute inset-0">
-        <Canvas camera={{ position: [0, 0, 35], fov: 60 }}>
-          <Suspense fallback={null}>
-            <ambientLight intensity={0.5} />
-            <VantaNet />
-            <fog attach="fog" args={['#080e1a', 10, 80]} />
-          </Suspense>
-        </Canvas>
-      </div>
+  const containerRef = useRef(null)
 
-      {/* Decorative radial glows to avoid "full blue" look */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent/5 blur-[120px] rounded-full" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent-light/5 blur-[120px] rounded-full" />
-      
-      {/* Noise Texture for premium feel */}
-      <div className="absolute inset-0 opacity-[0.05] mix-blend-overlay" 
+  return (
+    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-black">
+      {/* Subtle Grain / Paper Texture */}
+      <div className="absolute inset-0 opacity-[0.05] mix-blend-overlay z-10" 
            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} 
       />
+
+      {/* Varied & Dynamic Color Blobs - More subtle */}
+      <div className="absolute top-[-20%] left-[-10%] w-[80vw] h-[80vw] bg-[#f43f5e] rounded-full blur-[140px] opacity-[0.06] animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-[#22d3ee] rounded-full blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDuration: '12s' }} />
+      <div className="absolute top-[30%] right-[-10%] w-[60vw] h-[60vw] bg-[#facc15] rounded-full blur-[100px] opacity-[0.04] animate-pulse" style={{ animationDuration: '10s' }} />
+      <div className="absolute bottom-[20%] left-[-15%] w-[50vw] h-[50vw] bg-[#8b5cf6] rounded-full blur-[130px] opacity-[0.03] animate-pulse" style={{ animationDuration: '15s' }} />
+      <div className="absolute top-[10%] left-[30%] w-[40vw] h-[40vw] bg-[#10b981] rounded-full blur-[110px] opacity-[0.02] animate-pulse" style={{ animationDuration: '18s' }} />
+      <div className="absolute bottom-[40%] right-[20%] w-[35vw] h-[35vw] bg-[#f97316] rounded-full blur-[90px] opacity-[0.03] animate-pulse" style={{ animationDuration: '14s' }} />
+
+      {/* Touch of Black - Vignette Overlay */}
+      <div className="absolute inset-0 bg-radial-[circle_at_center,transparent_0%,rgba(0,0,0,0.5)_100%] z-20" />
+
+
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
     </div>
   )
 }

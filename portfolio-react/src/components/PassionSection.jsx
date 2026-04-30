@@ -10,8 +10,8 @@ const passions = [
     subtitle: "Open World & Immersion",
     desc: "Passionné par les univers ouverts comme GTA V, Red Dead Redemption ou Watch Dogs, j'apprécie les expériences immersives où narration et liberté de jeu se complètent.",
     icon: Gamepad2,
-    color: "text-blue-400",
-    bg: "rgba(37, 99, 235, 0.05)",
+    color: "text-[var(--color-creative-cyan)]",
+    bg: "rgba(34, 211, 238, 0.1)",
     hasMore: false
   },
   {
@@ -20,8 +20,8 @@ const passions = [
     subtitle: "Liberté & Endurance",
     desc: "Le cyclisme me permet de me dépasser et de m'évader. C'est un équilibre entre effort, découverte et discipline.",
     icon: Bike,
-    color: "text-emerald-400",
-    bg: "rgba(16, 185, 129, 0.05)",
+    color: "text-[var(--color-creative-yellow)]",
+    bg: "rgba(250, 204, 21, 0.1)",
     hasMore: false
   },
   {
@@ -30,8 +30,8 @@ const passions = [
     subtitle: "Instants & Lumière",
     desc: "La photographie développe mon regard et mon sens du détail, des compétences que j'applique directement dans mes projets en communication.",
     icon: Camera,
-    color: "text-purple-400",
-    bg: "rgba(168, 85, 247, 0.05)",
+    color: "text-[var(--color-creative-pink)]",
+    bg: "rgba(244, 63, 94, 0.1)",
     hasMore: true
   }
 ]
@@ -57,16 +57,16 @@ export default function PassionSection() {
 
   return (
     <section className="relative py-24 md:py-32 overflow-hidden bg-transparent border-y border-white/5">
-      {/* Video Background with Cinematic Enhancements */}
+      {/* YouTube Background with Cinematic Enhancements */}
       <div 
         className="absolute inset-0 overflow-hidden pointer-events-none"
         style={{
-          WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 90%)',
-          maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 90%)'
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 95%)',
+          maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 95%)'
         }}
       >
-        {/* Vignette Overlay for focus and depth */}
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+        {/* Vignette Overlay - reduced to let more video through */}
+        <div className="absolute inset-0 z-10 bg-black/30" />
         
         <video
           ref={videoRef}
@@ -74,12 +74,21 @@ export default function PassionSection() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.02]" // Slight scale to avoid edge bleeding
-          style={{ filter: 'brightness(0.7) saturate(1.1) contrast(1.1)' }}
+          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.05]"
+          style={{ filter: 'brightness(1.1) saturate(1.2) contrast(1.1)' }}
         >
           <source src={`${baseUrl}videos/bmw-bg.mp4`} type="video/mp4" />
         </video>
+
+
+        {/* Decorative cinematic scanlines/grain */}
+        <div className="absolute inset-0 z-20 bg-noise opacity-[0.05] pointer-events-none" />
       </div>
+
+
+      {/* Frame accents */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-creative-cyan)] to-transparent opacity-20" />
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-creative-pink)] to-transparent opacity-20" />
 
       <div className="section-container relative z-10">
         <div className="max-w-3xl mb-12 md:mb-20">
@@ -88,35 +97,39 @@ export default function PassionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-accent-light font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs mb-4 flex items-center gap-3">
-              <span className="w-8 h-px bg-accent-light/40" />
+            <p className="text-white font-black tracking-[0.3em] uppercase text-[10px] md:text-xs mb-4 flex items-center gap-3">
+              <span className="w-8 h-1 bg-[var(--color-creative-cyan)]" />
               En dehors du digital
             </p>
-            <h2 className="text-4xl md:text-7xl font-bold mb-4 md:mb-8 tracking-tighter">
+            <h2 className="text-4xl md:text-7xl font-black mb-4 md:mb-8 tracking-tighter uppercase text-white relative inline-block">
               Ce qui me <br />
-              <span className="highlight italic">définit aussi.</span>
+              <span className="text-[var(--color-creative-pink)] mt-2 inline-block" style={{ WebkitTextStroke: '2px white' }}>définit aussi.</span>
+              <div className="sticker-shape sticker-yellow absolute -top-10 -right-20 rotate-12 hidden md:block">Life</div>
             </h2>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {passions.map((p, i) => {
             const CardContent = (
               <>
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-500">
-                  <p.icon className={p.color} size={28} />
+                <div className="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white/10 flex items-center justify-center mb-4 md:mb-8 group-hover:scale-110 transition-transform duration-500 border border-white/10">
+                  <p.icon className={p.color} size={24} />
                 </div>
-                <h3 className="text-xl md:text-3xl font-bold mb-2 tracking-tight group-hover:text-white transition-colors">{p.title}</h3>
-                <p className={`text-xs font-bold uppercase tracking-widest ${p.color} mb-4 md:mb-6 opacity-70`}>{p.subtitle}</p>
-                <p className="text-text-muted text-sm md:text-base leading-relaxed mb-6 md:mb-8">{p.desc}</p>
+                <h3 className="text-lg md:text-3xl font-bold mb-1 md:mb-2 tracking-tight text-white">{p.title}</h3>
+                <p className={`text-[10px] md:text-xs font-bold uppercase tracking-widest ${p.color} mb-3 md:mb-6 opacity-90`}>{p.subtitle}</p>
+                <p className="text-white/80 text-xs md:text-base leading-relaxed mb-4 md:mb-8 line-clamp-3 md:line-clamp-none font-medium">{p.desc}</p>
                 {p.hasMore && (
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white/40 group-hover:text-white transition-colors">
-                    Découvrir mes photos <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  <div className="flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">
+                    Photos <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 )}
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/5 blur-[50px] rounded-full group-hover:bg-white/10 transition-colors" />
+                <div className="absolute -bottom-10 -right-10 w-24 h-24 md:w-32 md:h-32 bg-white/5 blur-[40px] md:blur-[50px] rounded-full group-hover:bg-white/20 transition-colors" />
               </>
             )
+
+            const cardClasses = "group p-6 md:p-10 rounded-none border-2 md:border-4 border-black shadow-[4px_4px_0_0_#000] md:shadow-[8px_8px_0_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_0_#000] md:hover:shadow-[4px_4px_0_0_#000] transition-all duration-500 relative overflow-hidden bg-black/40 backdrop-blur-xl"
+            const accentStyle = { borderTopColor: p.color.includes('cyan') ? 'var(--color-creative-cyan)' : p.color.includes('yellow') ? 'var(--color-creative-yellow)' : 'var(--color-creative-pink)' }
 
             return p.hasMore ? (
               <motion.div
@@ -129,8 +142,8 @@ export default function PassionSection() {
               >
                 <Link
                   to="/photographie"
-                  className="glass-card group p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-white/5 hover:border-white/20 transition-all duration-500 relative overflow-hidden block cursor-pointer backdrop-blur-md bg-card/70"
-                  style={{ background: `linear-gradient(135deg, ${p.bg}, rgba(17,29,48,0.7))` }}
+                  className={cardClasses}
+                  style={accentStyle}
                 >
                   {CardContent}
                 </Link>
@@ -142,8 +155,8 @@ export default function PassionSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-card group p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-white/5 hover:border-white/20 transition-all duration-500 relative overflow-hidden backdrop-blur-md bg-card/70"
-                style={{ background: `linear-gradient(135deg, ${p.bg}, rgba(17,29,48,0.7))` }}
+                className={cardClasses}
+                style={accentStyle}
               >
                 {CardContent}
               </motion.div>

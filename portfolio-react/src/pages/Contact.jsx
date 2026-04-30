@@ -3,30 +3,47 @@ import { Mail, Linkedin, Send, MessageSquare, Phone, Sparkles, CheckCircle2 } fr
 import { useState } from 'react'
 import Magnetic from '../components/Magnetic'
 import PageHero from '../components/PageHero'
+import { useToast } from '../hooks/useToast'
 
 export default function Contact() {
   const [status, setStatus] = useState('idle') // idle, sending, success, error
   const linkedinUrl = "https://www.linkedin.com/in/tharsanan-arulananthaselvam/"
+  const toast = useToast()
 
   const handleSubmit = (e) => {
     // On laisse le formulaire s'envoyer normalement pour une fiabilité maximale
     setStatus('sending');
+    toast("Envoi de votre message...", "info");
   }
 
   return (
     <main className="relative pb-20 bg-transparent min-h-screen overflow-hidden">
       <PageHero
         tag="Contact"
-        title={<>Parlons de votre <br /><span className="text-accent-light italic">prochain projet.</span></>}
+        title={<>Parlons de votre <br /><span className="text-[var(--color-creative-pink)] uppercase font-black" style={{ WebkitTextStroke: '1px white' }}>prochain projet.</span></>}
         subtitle="Que vous ayez une idée précise ou que vous souhaitiez explorer des possibilités, je suis là pour vous accompagner."
         compact
+        themeColor="purple"
       />
 
+
+
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 pointer-events-none -z-10 opacity-30" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+
+
       <section className="section-container relative z-10">
+        {/* Section Color Blobs */}
+        <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-[var(--color-creative-pink)] rounded-full blur-[140px] opacity-[0.05] -z-10" />
+
+        
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32">
           {/* Left Column: Info */}
           <div>
-            <div className="space-y-8">
+            <div className="space-y-8 relative">
+                <div className="hidden md:block sticker-shape sticker-cyan absolute -top-6 -right-4 rotate-[-5deg] z-20">Network</div>
+
+
               {[
                 { icon: <Mail />, label: "Email", val: "tharsananarul@gmail.com", href: "mailto:tharsananarul@gmail.com" },
                 { icon: <Linkedin />, label: "LinkedIn", val: "Tharsanan Arul", href: linkedinUrl },
@@ -41,12 +58,12 @@ export default function Contact() {
                 >
                   <Magnetic>
                     <a href={item.href} target={item.href.startsWith('http') ? "_blank" : "_self"} rel="noreferrer" className="flex items-center gap-6 group">
-                      <div className="p-4 rounded-2xl bg-white/5 border border-white/10 group-hover:border-accent-light/40 transition-all shadow-xl group-hover:scale-110 duration-500">
-                        <div className="text-accent-light">{item.icon}</div>
+                      <div className="p-4 rounded-none bg-white border-4 border-black group-hover:bg-[var(--color-creative-pink)] transition-all shadow-[6px_6px_0_0_#000] group-hover:scale-110 duration-500">
+                        <div className="text-black group-hover:text-white">{item.icon}</div>
                       </div>
                       <div>
-                        <p className="text-[10px] text-text-muted font-bold uppercase tracking-widest mb-1">{item.label}</p>
-                        <p className="text-lg font-bold group-hover:text-accent-light transition-colors">{item.val}</p>
+                        <p className="text-[10px] text-white font-black uppercase tracking-widest mb-1">{item.label}</p>
+                        <p className="text-[11px] sm:text-sm md:text-lg font-black text-white group-hover:text-[var(--color-creative-cyan)] transition-colors uppercase tracking-tighter break-words hyphens-auto">{item.val}</p>
                       </div>
                     </a>
                   </Magnetic>
@@ -60,7 +77,7 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 md:p-12 rounded-[3.5rem] bg-card/50 border border-white/10 shadow-2xl relative overflow-hidden backdrop-blur-3xl"
+            className="p-8 md:p-12 rounded-none bg-[var(--color-primary)] border-4 border-black shadow-[12px_12px_0_0_var(--color-creative-pink)] relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 p-8 text-white/5 -rotate-12 translate-x-4 -translate-y-4">
               <MessageSquare size={120} />
@@ -104,45 +121,45 @@ export default function Contact() {
                   
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-text-muted px-1">Nom complet</label>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-white px-1">Nom complet</label>
                       <input 
                         required
                         name="name"
                         type="text" 
-                        placeholder="John Doe"
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-accent-light transition-all text-white placeholder:text-slate-600 focus:bg-white/10"
+                        placeholder="Marcel Dubois"
+                        className="w-full bg-white border-2 sm:border-4 border-black rounded-none px-4 py-3 sm:px-6 sm:py-5 focus:outline-none focus:bg-[var(--color-creative-yellow)] transition-all text-black font-bold placeholder:text-black/30 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000]"
                       />
                     </div>
                     <div className="space-y-3">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-text-muted px-1">Email</label>
+                      <label className="text-[10px] font-black uppercase tracking-widest text-white px-1">Email</label>
                       <input 
                         required
                         name="email"
                         type="email" 
-                        placeholder="john@example.com"
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-accent-light transition-all text-white placeholder:text-slate-600 focus:bg-white/10"
+                        placeholder="marcel@dubois.fr"
+                        className="w-full bg-white border-2 sm:border-4 border-black rounded-none px-4 py-3 sm:px-6 sm:py-5 focus:outline-none focus:bg-[var(--color-creative-cyan)] transition-all text-black font-bold placeholder:text-black/30 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000]"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-text-muted px-1">Sujet</label>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-white px-1">Sujet</label>
                     <input 
                       name="subject"
                       type="text" 
                       placeholder="Collaboration, Opportunité, Question..."
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-accent-light transition-all text-white placeholder:text-slate-600 focus:bg-white/10"
+                      className="w-full bg-white border-2 sm:border-4 border-black rounded-none px-4 py-3 sm:px-6 sm:py-5 focus:outline-none focus:bg-[var(--color-creative-yellow)] transition-all text-black font-bold placeholder:text-black/30 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000]"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-text-muted px-1">Message</label>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-white px-1">Message</label>
                     <textarea 
                       required
                       name="message"
-                      rows="5"
+                      rows="4"
                       placeholder="Comment puis-je vous aider ?"
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-accent-light transition-all text-white placeholder:text-slate-600 resize-none focus:bg-white/10"
+                      className="w-full bg-white border-2 sm:border-4 border-black rounded-none px-4 py-3 sm:px-6 sm:py-5 focus:outline-none focus:bg-[var(--color-creative-pink)] focus:text-white transition-all text-black font-bold placeholder:text-black/30 resize-none shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000]"
                     ></textarea>
                   </div>
 

@@ -10,6 +10,7 @@ import CustomCursor from './components/CustomCursor'
 import SmoothScroll from './components/SmoothScroll'
 import Background from './components/Background'
 import PageTransition from './components/PageTransition'
+import { ToastProvider } from './hooks/useToast'
 
 import Home from './pages/Home'
 import Projets from './pages/Projets'
@@ -30,36 +31,38 @@ export default function App() {
   const location = useLocation()
 
   return (
-    <div className="text-slate-50 min-h-screen selection:bg-accent/30 selection:text-accent overflow-hidden">
-      <Background />
-      
-      <SmoothScroll>
-        <PageLoader />
-        <ScrollProgress />
-        <CustomCursor />
-        <Navbar />
+    <ToastProvider>
+      <div className="text-slate-50 min-h-screen selection:bg-accent/30 selection:text-accent overflow-hidden">
+        <Background />
         
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-            <Route path="/projets" element={<PageTransition><Projets /></PageTransition>} />
-            <Route path="/cv" element={<PageTransition><CV /></PageTransition>} />
-            <Route path="/competences" element={<PageTransition><Competences /></PageTransition>} />
-            <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-            
-            {/* Detailed Project Routes */}
-            <Route path="/projets/futsal" element={<PageTransition><ProjetFutsal /></PageTransition>} />
-            <Route path="/projets/alda" element={<PageTransition><ProjetAlda /></PageTransition>} />
-            <Route path="/projets/sans-bavures" element={<PageTransition><ProjetSansBavures /></PageTransition>} />
-            <Route path="/projets/bts-com" element={<PageTransition><ProjetBtsCom /></PageTransition>} />
-            <Route path="/projets/perso" element={<PageTransition><ProjetPerso /></PageTransition>} />
-            <Route path="/projets/ux" element={<PageTransition><ProjetsUX /></PageTransition>} />
-            <Route path="/photographie" element={<PageTransition><Photographie /></PageTransition>} />
-          </Routes>
-        </AnimatePresence>
+        <SmoothScroll>
+          <PageLoader />
+          <ScrollProgress />
+          <CustomCursor />
+          <Navbar />
+          
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+              <Route path="/projets" element={<PageTransition><Projets /></PageTransition>} />
+              <Route path="/cv" element={<PageTransition><CV /></PageTransition>} />
+              <Route path="/competences" element={<PageTransition><Competences /></PageTransition>} />
+              <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+              
+              {/* Detailed Project Routes */}
+              <Route path="/projets/futsal" element={<PageTransition><ProjetFutsal /></PageTransition>} />
+              <Route path="/projets/alda" element={<PageTransition><ProjetAlda /></PageTransition>} />
+              <Route path="/projets/sans-bavures" element={<PageTransition><ProjetSansBavures /></PageTransition>} />
+              <Route path="/projets/bts-com" element={<PageTransition><ProjetBtsCom /></PageTransition>} />
+              <Route path="/projets/perso" element={<PageTransition><ProjetPerso /></PageTransition>} />
+              <Route path="/projets/ux" element={<PageTransition><ProjetsUX /></PageTransition>} />
+              <Route path="/photographie" element={<PageTransition><Photographie /></PageTransition>} />
+            </Routes>
+          </AnimatePresence>
 
-        <Footer />
-      </SmoothScroll>
-    </div>
+          <Footer />
+        </SmoothScroll>
+      </div>
+    </ToastProvider>
   )
 }

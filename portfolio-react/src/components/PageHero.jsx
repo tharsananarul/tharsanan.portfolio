@@ -11,16 +11,31 @@ import { motion } from 'framer-motion'
  *   subtitle — Optional description paragraph
  *   compact  — If true, less padding (for pages with immediate content below)
  */
-export default function PageHero({ tag, title, subtitle, compact = false }) {
+export default function PageHero({ tag, title, subtitle, compact = false, themeColor = 'pink' }) {
+  const getColors = () => {
+    switch(themeColor) {
+      case 'yellow': return ['var(--color-creative-yellow)', 'var(--color-creative-cyan)']
+      case 'cyan': return ['var(--color-creative-cyan)', 'var(--color-creative-pink)']
+      case 'purple': return ['var(--color-creative-purple)', 'var(--color-creative-pink)']
+      case 'green': return ['var(--color-creative-green)', 'var(--color-creative-yellow)']
+      case 'pink': 
+      default: return ['var(--color-creative-pink)', 'var(--color-creative-yellow)']
+    }
+  }
+  
+  const [color1, color2] = getColors()
+
   return (
     <section className={`relative overflow-hidden ${compact ? 'pt-24 pb-4 md:pt-32 md:pb-6' : 'pt-28 pb-16 md:pt-40 md:pb-28'}`}>
       {/* Decorative background layers */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Radial gradient glow */}
-        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[120%] h-[70%] bg-accent/8 blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent" />
+        {/* Radial gradient glow - colorful creative style */}
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[120%] bg-[var(--color-creative-pink)] opacity-0 mix-blend-screen" style={{ backgroundColor: color1, filter: 'blur(150px)', borderRadius: '100%', opacity: 0.2 }} />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[100%] bg-[var(--color-creative-yellow)] opacity-0 mix-blend-screen" style={{ backgroundColor: color2, filter: 'blur(150px)', borderRadius: '100%', opacity: 0.2 }} />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[60%] bg-[var(--color-creative-cyan)] blur-[120px] rounded-full opacity-[0.15] mix-blend-screen" />
+
         {/* Subtle grid */}
-        <div className="grid-overlay opacity-50" />
+        <div className="grid-overlay opacity-30" />
       </div>
 
       {/* Animated horizontal accent line */}
@@ -38,17 +53,18 @@ export default function PageHero({ tag, title, subtitle, compact = false }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-accent-light font-bold tracking-[0.3em] uppercase mb-5 md:mb-6 text-[10px] md:text-xs flex items-center gap-3">
-              <span className="w-8 h-px bg-accent-light/60" />
+            <p className="text-accent-light font-bold tracking-[0.3em] uppercase mb-5 md:mb-6 text-[11px] md:text-sm flex items-center gap-3">
+              <span className="w-10 h-px bg-accent-light/60" />
               {tag}
             </p>
           </motion.div>
+
 
           <motion.h1
             initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ delay: 0.15, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 md:mb-8 tracking-tighter leading-[1.05]"
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black mb-6 md:mb-8 tracking-tighter leading-[1] uppercase"
           >
             {title}
           </motion.h1>
@@ -58,7 +74,7 @@ export default function PageHero({ tag, title, subtitle, compact = false }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-sm md:text-xl text-text-muted leading-relaxed max-w-2xl font-medium"
+              className="text-sm md:text-xl text-white/90 leading-relaxed max-w-2xl font-medium"
             >
               {subtitle}
             </motion.p>

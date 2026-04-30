@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { ArrowLeft, ArrowRight, ExternalLink, Code2, Cpu, Globe, Layout } from 'lucide-react'
 import MosaicGrid from '../components/MosaicGrid'
+import LazyImage from '../components/ui/LazyImage'
 
 export default function ProjetsUX() {
   const containerRef = useRef(null)
@@ -43,22 +44,25 @@ export default function ProjetsUX() {
 
       {/* Hero Header */}
       <div className="relative h-[50vh] md:h-[60vh] overflow-hidden" ref={containerRef}>
-        <motion.img 
-          src={`${baseUrl}images/couvertures/ui-ux-designs.png`} 
-          alt="UI/UX Design" 
-          className="w-full h-full object-cover"
-          style={{ y }}
-          onError={(e) => { e.target.src = "https://via.placeholder.com/1920x1080/111d30/7a90b8?text=UI/UX+Design"; }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent" />
-        <div className="absolute inset-0 flex flex-col justify-end section-container pb-12 md:pb-20">
+        <motion.div style={{ y, height: '100%' }}>
+          <LazyImage 
+            src={`${baseUrl}images/couvertures/ui-ux-designs.png`} 
+            alt="UI/UX Design" 
+            className="w-full h-full"
+            skeletonClassName="opacity-30"
+          />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent z-10" />
+        <div className="absolute inset-0 flex flex-col justify-end section-container pb-12 md:pb-20 z-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-4xl md:text-8xl font-black text-white tracking-tighter font-heading">
-              UI/UX <span className="text-accent-light italic">Works.</span>
+            <h1 className="text-5xl md:text-9xl font-black text-white tracking-tighter uppercase relative inline-block">
+              UI/UX <br />
+              <span className="text-[var(--color-creative-cyan)] editorial-title-outline mt-2 inline-block">Works.</span>
+              <div className="absolute -top-10 -right-20 sticker-shape sticker-yellow rotate-[12deg] hidden md:block">Design</div>
             </h1>
           </motion.div>
         </div>
@@ -124,7 +128,7 @@ export default function ProjetsUX() {
             </a>
           </div>
         </div>
-        <MosaicGrid sections={[{ items: futsalScreens }]} />
+        <MosaicGrid sections={[{ items: futsalScreens }]} accentColor="#22d3ee" />
       </section>
 
       {/* Case Studies */}
@@ -141,7 +145,7 @@ export default function ProjetsUX() {
             </a>
           </div>
         </div>
-        <MosaicGrid sections={[{ items: btsRevision }]} />
+        <MosaicGrid sections={[{ items: btsRevision }]} accentColor="#22d3ee" />
       </section>
 
       <section className="section-container py-20 md:py-32 border-t border-white/5">
@@ -157,7 +161,7 @@ export default function ProjetsUX() {
             </a>
           </div>
         </div>
-        <MosaicGrid sections={[{ items: hopePower }]} />
+        <MosaicGrid sections={[{ items: hopePower }]} accentColor="#22d3ee" />
       </section>
 
       {/* Next Project */}

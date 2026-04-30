@@ -162,7 +162,7 @@ export default function ProjetFutsal() {
       </section>
 
       {/* Gallery */}
-      <MosaicGrid sections={sections} />
+      <MosaicGrid sections={sections} accentColor="#22c55e" />
 
       {/* Next Project */}
       <section className="section-container py-32 border-t border-white/5">
