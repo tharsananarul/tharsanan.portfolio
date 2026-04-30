@@ -10,9 +10,9 @@
   --color-text-muted: #888888;
   
   --color-creative-yellow: #facc15;
-  --color-creative-pink: #f43f5e;
+  --color-creative-blue: #0ea5e9; /* Light Blue / Cyan Alternative */
   --color-creative-cyan: #22d3ee;
-  --color-creative-purple: #8b5cf6;
+  --color-creative-orange: #f97316; /* Orange */
   --color-creative-green: #22c55e;
   
   --font-heading: "Archivo Black", "Syne", sans-serif;
@@ -80,7 +80,7 @@
   }
 
   .btn-outline {
-    @apply relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 border-2 border-white rounded-none hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_0px_var(--color-creative-pink)] active:scale-95 text-sm md:text-base shadow-[4px_4px_0px_0px_transparent];
+    @apply relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 border-2 border-white rounded-none hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_0px_var(--color-creative-blue)] active:scale-95 text-sm md:text-base shadow-[4px_4px_0px_0px_transparent];
   }
 
   .grid-overlay {
@@ -225,8 +225,8 @@
   @apply bg-[var(--color-creative-yellow)] text-black border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] sm:shadow-[4px_4px_0_0_rgba(0,0,0,1)];
 }
 
-.sticker-pink {
-  @apply bg-[var(--color-creative-pink)] text-white;
+.sticker-blue {
+  @apply bg-[var(--color-creative-blue)] text-white;
 }
 
 .sticker-cyan {

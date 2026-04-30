@@ -60,13 +60,13 @@ const LogoScramble = () => {
   return (
     <Link 
       to="/" 
-      className="logo group p-2.5 min-w-[55px] inline-flex items-center justify-center bg-white border-2 md:border-4 border-black shadow-[4px_4px_0_0_#000] rotate-[-2deg] hover:rotate-0 hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+      className="logo group p-1.5 md:p-2 min-w-[40px] md:min-w-[50px] inline-flex items-center justify-center bg-white border-2 md:border-4 border-black shadow-[4px_4px_0_0_#000] rotate-[-2deg] hover:rotate-0 hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span className="font-heading font-black text-3xl md:text-5xl tracking-tighter text-black uppercase leading-none select-none">
+      <span className="font-heading font-black text-2xl md:text-4xl tracking-tighter text-black uppercase leading-none select-none">
         {text}
-        <span className="text-[var(--color-creative-pink)]">.</span>
+        <span className="text-[var(--color-creative-blue)]">.</span>
       </span>
     </Link>
   )
@@ -103,8 +103,8 @@ export default function Navbar() {
     <nav 
       className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 md:px-[5vw] transition-all duration-700 ease-[0.16,1,0.36,1] ${
         scrolled 
-          ? 'bg-black border-b-2 border-white/5 py-2 md:py-4 shadow-2xl' 
-          : 'bg-transparent py-4 md:py-8'
+          ? 'bg-black border-b-2 border-white/10 py-2 md:py-4 shadow-2xl' 
+          : 'bg-black/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-white/5 md:border-transparent py-3 md:py-8'
       }`}
     >
       {/* Logo */}
@@ -116,7 +116,7 @@ export default function Navbar() {
       <div className="hidden md:flex items-center gap-10">
         <div className="flex items-center gap-8 nav-links">
           {navLinks.map((link, i) => {
-            const colors = ['cyan', 'pink', 'yellow', 'green'];
+            const colors = ['cyan', 'blue', 'yellow', 'green'];
             const color = colors[i % colors.length];
             return (
             <Magnetic key={link.name}>
@@ -187,7 +187,7 @@ export default function Navbar() {
             <div className="flex flex-col p-6 pt-24 gap-6 items-center text-center">
               <p className="text-accent-light font-black tracking-[0.4em] uppercase text-sm mb-2 opacity-80">Menu</p>
                 {navLinks.map((link, i) => {
-                  const colors = ['cyan', 'pink', 'yellow', 'green'];
+                  const colors = ['cyan', 'blue', 'yellow', 'green'];
                   const color = colors[i % colors.length];
                   return (
                   <motion.div
@@ -223,7 +223,7 @@ export default function Navbar() {
                   <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-white hover:text-[var(--color-creative-cyan)] transition-colors">
                     <Linkedin size={24} />
                   </a>
-                  <a href="https://github.com/tharsananarul" target="_blank" rel="noreferrer" className="text-white hover:text-[var(--color-creative-pink)] transition-colors">
+                  <a href="https://github.com/tharsananarul" target="_blank" rel="noreferrer" className="text-white hover:text-[var(--color-creative-blue)] transition-colors">
                     <Github size={24} />
                   </a>
                 </div>

@@ -59,7 +59,7 @@ export default function Projets() {
   const baseUrl = import.meta.env.BASE_URL
 
   return (
-    <main className="relative pb-20 bg-transparent min-h-screen overflow-hidden">
+    <main className="relative pb-20 bg-gradient-to-b from-primary via-[#022c22]/60 to-primary min-h-screen overflow-hidden">
       <PageHero
         tag="Réalisations"
         title={<>Découvrez <br /><span className="text-[var(--color-creative-yellow)] uppercase font-black" style={{ WebkitTextStroke: '1px white' }}>mon univers.</span></>}
@@ -78,7 +78,7 @@ export default function Projets() {
 
         {/* Stickers - Hidden on mobile to prevent overlapping */}
         <div className="hidden md:block sticker-shape sticker-cyan absolute top-60 -left-10 rotate-[-10deg] z-20">Creative</div>
-        <div className="hidden md:block sticker-shape sticker-pink absolute bottom-60 -right-10 rotate-[15deg] z-20">Design</div>
+        <div className="hidden md:block sticker-shape sticker-blue absolute bottom-60 -right-10 rotate-[15deg] z-20">Design</div>
 
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-10">

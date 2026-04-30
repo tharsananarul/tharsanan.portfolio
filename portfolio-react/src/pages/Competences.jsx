@@ -34,10 +34,10 @@ export default function Competences() {
   ]
 
   return (
-    <main className="relative pb-20 overflow-hidden bg-transparent">
+    <main className="relative pb-20 overflow-hidden bg-gradient-to-b from-primary via-[#1e3a8a]/40 to-primary min-h-screen">
       <PageHero
         tag="Expertise"
-        title={<>Mes <span className="text-[var(--color-creative-pink)] uppercase font-black" style={{ WebkitTextStroke: '1px white' }}>Compétences.</span></>}
+        title={<>Mes <span className="text-[var(--color-creative-blue)] uppercase font-black" style={{ WebkitTextStroke: '1px white' }}>Compétences.</span></>}
         subtitle="Un mix polyvalent entre design créatif, communication stratégique et développement technique."
         themeColor="cyan"
       />
@@ -51,7 +51,7 @@ export default function Competences() {
         {/* Core Skills Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-32 relative">
           {/* Stickers */}
-          <div className="sticker-shape sticker-pink absolute -top-12 -left-4 rotate-[-10deg] z-20">Creative</div>
+          <div className="sticker-shape sticker-blue absolute -top-12 -left-4 rotate-[-10deg] z-20">Creative</div>
           <div className="sticker-shape sticker-yellow absolute -bottom-12 -right-4 rotate-[15deg] z-20">Technical</div>
 
           {skills.map((skill, i) => (
@@ -69,7 +69,7 @@ export default function Competences() {
               }`}
             >
               <div className={`w-10 h-10 md:w-14 md:h-14 rounded-none border-2 border-black flex items-center justify-center mb-4 md:mb-8 transition-all duration-500 transform group-hover:rotate-6 shadow-[4px_4px_0_0_#000] ${
-                i % 3 === 0 ? 'bg-[var(--color-creative-pink)] text-white' : 
+                i % 3 === 0 ? 'bg-[var(--color-creative-blue)] text-white' : 
                 i % 3 === 1 ? 'bg-[var(--color-creative-yellow)] text-black' : 
                 'bg-[var(--color-creative-cyan)] text-black'
               }`}>
@@ -135,7 +135,7 @@ export default function Competences() {
         <div>
           <h2 className="text-2xl md:text-6xl font-black mb-16 tracking-tighter uppercase">
             Langues <br />
-            <span className="bg-[var(--color-creative-yellow)] text-black px-3 inline-block -rotate-1 border-2 border-black shadow-[4px_4px_0_0_var(--color-creative-pink)]">parlées</span>
+            <span className="bg-[var(--color-creative-yellow)] text-black px-3 inline-block -rotate-1 border-2 border-black shadow-[4px_4px_0_0_var(--color-creative-blue)]">parlées</span>
           </h2>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">

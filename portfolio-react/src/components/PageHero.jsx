@@ -11,15 +11,15 @@ import { motion } from 'framer-motion'
  *   subtitle — Optional description paragraph
  *   compact  — If true, less padding (for pages with immediate content below)
  */
-export default function PageHero({ tag, title, subtitle, compact = false, themeColor = 'pink' }) {
+export default function PageHero({ tag, title, subtitle, compact = false, themeColor = 'blue' }) {
   const getColors = () => {
     switch(themeColor) {
       case 'yellow': return ['var(--color-creative-yellow)', 'var(--color-creative-cyan)']
-      case 'cyan': return ['var(--color-creative-cyan)', 'var(--color-creative-pink)']
-      case 'purple': return ['var(--color-creative-purple)', 'var(--color-creative-pink)']
+      case 'cyan': return ['var(--color-creative-cyan)', 'var(--color-creative-blue)']
+      case 'orange': return ['var(--color-creative-orange)', 'var(--color-creative-blue)']
       case 'green': return ['var(--color-creative-green)', 'var(--color-creative-yellow)']
-      case 'pink': 
-      default: return ['var(--color-creative-pink)', 'var(--color-creative-yellow)']
+      case 'blue': 
+      default: return ['var(--color-creative-blue)', 'var(--color-creative-yellow)']
     }
   }
   
@@ -30,7 +30,7 @@ export default function PageHero({ tag, title, subtitle, compact = false, themeC
       {/* Decorative background layers */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Radial gradient glow - colorful creative style */}
-        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[120%] bg-[var(--color-creative-pink)] opacity-0 mix-blend-screen" style={{ backgroundColor: color1, filter: 'blur(150px)', borderRadius: '100%', opacity: 0.2 }} />
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[120%] bg-[var(--color-creative-blue)] opacity-0 mix-blend-screen" style={{ backgroundColor: color1, filter: 'blur(150px)', borderRadius: '100%', opacity: 0.2 }} />
         <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[100%] bg-[var(--color-creative-yellow)] opacity-0 mix-blend-screen" style={{ backgroundColor: color2, filter: 'blur(150px)', borderRadius: '100%', opacity: 0.2 }} />
         <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[60%] bg-[var(--color-creative-cyan)] blur-[120px] rounded-full opacity-[0.15] mix-blend-screen" />
 

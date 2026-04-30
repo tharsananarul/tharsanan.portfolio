@@ -185,7 +185,7 @@ export default function Photographie() {
   ) : null
 
   return (
-    <main className="relative bg-transparent min-h-screen">
+    <main className="relative bg-gradient-to-b from-primary via-[#ea580c]/20 to-primary min-h-screen">
       <PageHero
         tag="Galerie"
         title={<>Photo<span className="text-accent-light italic">graphie.</span></>}

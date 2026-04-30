@@ -30,7 +30,7 @@ const passions = [
     subtitle: "Instants & Lumière",
     desc: "La photographie développe mon regard et mon sens du détail, des compétences que j'applique directement dans mes projets en communication.",
     icon: Camera,
-    color: "text-[var(--color-creative-pink)]",
+    color: "text-[var(--color-creative-blue)]",
     bg: "rgba(244, 63, 94, 0.1)",
     hasMore: true
   }
@@ -88,7 +88,7 @@ export default function PassionSection() {
 
       {/* Frame accents */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-creative-cyan)] to-transparent opacity-20" />
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-creative-pink)] to-transparent opacity-20" />
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-creative-blue)] to-transparent opacity-20" />
 
       <div className="section-container relative z-10">
         <div className="max-w-3xl mb-12 md:mb-20">
@@ -103,7 +103,7 @@ export default function PassionSection() {
             </p>
             <h2 className="text-4xl md:text-7xl font-black mb-4 md:mb-8 tracking-tighter uppercase text-white relative inline-block">
               Ce qui me <br />
-              <span className="text-[var(--color-creative-pink)] mt-2 inline-block" style={{ WebkitTextStroke: '2px white' }}>définit aussi.</span>
+              <span className="text-[var(--color-creative-blue)] mt-2 inline-block" style={{ WebkitTextStroke: '2px white' }}>définit aussi.</span>
               <div className="sticker-shape sticker-yellow absolute -top-10 -right-20 rotate-12 hidden md:block">Life</div>
             </h2>
           </motion.div>
@@ -129,7 +129,7 @@ export default function PassionSection() {
             )
 
             const cardClasses = "group p-6 md:p-10 rounded-none border-2 md:border-4 border-black shadow-[4px_4px_0_0_#000] md:shadow-[8px_8px_0_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_0_#000] md:hover:shadow-[4px_4px_0_0_#000] transition-all duration-500 relative overflow-hidden bg-black/40 backdrop-blur-xl"
-            const accentStyle = { borderTopColor: p.color.includes('cyan') ? 'var(--color-creative-cyan)' : p.color.includes('yellow') ? 'var(--color-creative-yellow)' : 'var(--color-creative-pink)' }
+            const accentStyle = { borderTopColor: p.color.includes('cyan') ? 'var(--color-creative-cyan)' : p.color.includes('yellow') ? 'var(--color-creative-yellow)' : 'var(--color-creative-blue)' }
 
             return p.hasMore ? (
               <motion.div

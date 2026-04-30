@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
           <div className="max-w-xs">
             <Link to="/" className="logo mb-8 p-3 inline-flex items-center justify-center bg-white border-4 border-black shadow-[6px_6px_0_0_#000] rotate-[-2deg] hover:rotate-0 transition-all font-black text-4xl md:text-6xl uppercase tracking-tighter text-black">
-              T<span className="text-[var(--color-creative-pink)]">.</span>
+              T<span className="text-[var(--color-creative-blue)]">.</span>
             </Link>
             <p className="text-white text-sm md:text-base font-bold uppercase tracking-tight leading-relaxed mb-8">
               Étudiant en BTS Communication au Lycée Jacques Brel. 
@@ -24,7 +24,7 @@ export default function Footer() {
               <a href="https://www.linkedin.com/in/tharsanan-arulananthaselvam/" target="_blank" rel="noreferrer" className="p-3 rounded-none bg-white/5 border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[var(--color-creative-cyan)] transition-all hover:text-white" title="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://github.com/tharsananarul" target="_blank" rel="noreferrer" className="p-3 rounded-none bg-white/5 border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[var(--color-creative-pink)] transition-all hover:text-white" title="GitHub">
+              <a href="https://github.com/tharsananarul" target="_blank" rel="noreferrer" className="p-3 rounded-none bg-white/5 border-2 border-black shadow-[4px_4px_0_0_#000] hover:bg-[var(--color-creative-blue)] transition-all hover:text-white" title="GitHub">
                 <Github size={20} />
               </a>
             </div>
@@ -32,18 +32,18 @@ export default function Footer() {
 
           <div className="grid grid-cols-2 gap-16">
             <div>
-              <h4 className="inline-block px-3 py-1 bg-[var(--color-creative-pink)] text-black font-black text-lg md:text-xl uppercase mb-8 rotate-[-1deg] border-2 border-black shadow-[4px_4px_0_0_#000]">Navigation</h4>
+              <h4 className="inline-block px-3 py-1 bg-[var(--color-creative-blue)] text-black font-black text-lg md:text-xl uppercase mb-8 rotate-[-1deg] border-2 border-black shadow-[4px_4px_0_0_#000]">Navigation</h4>
               <ul className="space-y-4 text-white text-sm md:text-base font-bold uppercase tracking-widest opacity-80">
-                <li><Link to="/" className="hover:text-[var(--color-creative-pink)] transition-colors">Accueil</Link></li>
+                <li><Link to="/" className="hover:text-[var(--color-creative-blue)] transition-colors">Accueil</Link></li>
                 <li><Link to="/projets" className="hover:text-[var(--color-creative-yellow)] transition-colors">Projets</Link></li>
                 <li><Link to="/cv" className="hover:text-[var(--color-creative-cyan)] transition-colors">CV</Link></li>
-                <li><Link to="/competences" className="hover:text-[var(--color-creative-pink)] transition-colors">Compétences</Link></li>
+                <li><Link to="/competences" className="hover:text-[var(--color-creative-blue)] transition-colors">Compétences</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="inline-block px-3 py-1 bg-[var(--color-creative-cyan)] text-black font-black text-lg md:text-xl uppercase mb-8 rotate-[2deg] border-2 border-black shadow-[4px_4px_0_0_#000]">Contact</h4>
               <ul className="space-y-4 text-white text-sm md:text-base font-bold tracking-tight opacity-80">
-                <li><a href="mailto:tharsananarul@gmail.com" className="hover:text-[var(--color-creative-pink)] transition-colors block break-all">tharsananarul@gmail.com</a></li>
+                <li><a href="mailto:tharsananarul@gmail.com" className="hover:text-[var(--color-creative-blue)] transition-colors block break-all">tharsananarul@gmail.com</a></li>
                 <li><a href="tel:0749878775" className="hover:text-[var(--color-creative-cyan)] transition-colors">07 49 87 87 75</a></li>
               </ul>
             </div>

@@ -120,10 +120,10 @@ export default function Home() {
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
         
         {/* Creative Abstract Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-[var(--color-primary)]">
+        <div className="absolute inset-0 z-0 overflow-hidden bg-gradient-to-b from-[#0f0c29] via-[#1e3a8a]/40 to-primary">
           <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--color-creative-yellow)] rounded-full blur-[100px] opacity-40 mix-blend-screen animate-pulse" style={{ animationDuration: '8s' }} />
           <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-[var(--color-creative-cyan)] rounded-full blur-[120px] opacity-30 mix-blend-screen animate-pulse" style={{ animationDuration: '12s' }} />
-          <div className="absolute top-[30%] left-[60%] w-[40vw] h-[40vw] bg-[var(--color-creative-pink)] rounded-full blur-[90px] opacity-20 mix-blend-screen animate-pulse" style={{ animationDuration: '10s' }} />
+          <div className="absolute top-[30%] left-[60%] w-[40vw] h-[40vw] bg-[var(--color-creative-blue)] rounded-full blur-[90px] opacity-20 mix-blend-screen animate-pulse" style={{ animationDuration: '10s' }} />
           <div className="grid-overlay opacity-30" />
         </div>
 
@@ -142,65 +142,84 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Decorative Stickers positioned around the whole text block */}
-            <motion.div 
-              initial={{ scale: 0, rotate: 20 }}
-              animate={{ scale: 1, rotate: -15 }}
-              transition={{ delay: 1.7, type: "spring" }}
-              className="absolute sticker-shape sticker-pink top-[15%] sm:top-[20%] left-2 sm:left-10 md:left-20 rotate-[-15deg] z-30"
-            >
-              Portfolio
-            </motion.div>
-            
-            <motion.div 
-              initial={{ scale: 0, rotate: -20 }}
-              animate={{ scale: 1, rotate: 10 }}
-              transition={{ delay: 1.5, type: "spring" }}
-              className="absolute sticker-shape sticker-yellow bottom-[25%] sm:bottom-[30%] right-2 sm:right-10 md:right-20 rotate-[10deg] z-30"
-            >
-              Creative
-            </motion.div>
-            <p className="text-accent-light font-bold tracking-[0.4em] uppercase mb-6 md:mb-8 text-[11px] md:text-sm flex items-center justify-center gap-3">
-              <span className="w-10 h-px bg-accent-light/60" />
+            <p className="text-white/80 font-bold tracking-[0.2em] md:tracking-[0.4em] uppercase mb-8 md:mb-12 text-[10px] md:text-sm flex items-center justify-center gap-2 md:gap-3">
+              <span className="w-6 md:w-10 h-px bg-white/40" />
               BTS Communication · Design Graphique
-              <span className="w-10 h-px bg-accent-light/60" />
+              <span className="w-6 md:w-10 h-px bg-white/40" />
             </p>
-
           </motion.div>
 
-          <h1 className="text-[10vw] md:text-[7vw] leading-[0.85] mb-6 md:mb-12 uppercase text-white font-black mix-blend-difference relative z-20">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
+          {/* Decorative Stickers positioned around the whole text block */}
+          <motion.div 
+            initial={{ scale: 0, rotate: 20 }}
+            animate={{ scale: 1, rotate: -15 }}
+            transition={{ delay: 1.7, type: "spring" }}
+            className="absolute sticker-shape sticker-blue top-[10%] sm:top-[15%] md:top-[20%] left-0 sm:left-6 md:left-12 rotate-[-15deg] z-30 scale-75 sm:scale-100 origin-top-left"
+          >
+            Portfolio
+          </motion.div>
+          
+          <motion.div 
+            initial={{ scale: 0, rotate: -20 }}
+            animate={{ scale: 1, rotate: 10 }}
+            transition={{ delay: 1.5, type: "spring" }}
+            className="absolute sticker-shape sticker-yellow bottom-[20%] sm:bottom-[25%] md:bottom-[30%] right-0 sm:right-6 md:right-12 rotate-[10deg] z-30 scale-75 sm:scale-100 origin-bottom-right"
+          >
+            Creative
+          </motion.div>
+
+          {/* Main Title Group */}
+          <div className="relative mb-8 md:mb-12">
+
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-2 md:mb-4 normal-case font-extrabold"
+              transition={{ delay: 0.7, duration: 0.8 }}
+              className="text-3xl md:text-5xl font-black mb-2 md:mb-4 tracking-tighter"
             >
-              Bonjour,<br />je suis<br />
-            </motion.div>
-            <motion.span 
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="block mt-2 editorial-title-outline hover:text-white transition-colors duration-500"
-            >
-              <TextScramble text="Tharsanan" />
-            </motion.span>
+              Bonjour, <br className="md:hidden" />je suis
+            </motion.h2>
             
-
-
-
-
-          </h1>
+            <motion.h1 
+              className="font-heading text-[14vw] md:text-[12vw] leading-[0.8] tracking-tighter font-black uppercase mx-auto"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.8, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                color: 'transparent',
+                WebkitTextStroke: '2px white',
+                textShadow: '0 0 40px rgba(255,255,255,0.1)'
+              }}
+            >
+              <span className="block hover:text-white transition-colors duration-500 cursor-default">
+                Tharsanan
+              </span>
+            </motion.h1>
+          </div>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
-            className="text-lg md:text-2xl text-white mb-10 md:mb-12 max-w-3xl leading-relaxed font-bold mx-auto opacity-90"
+            className="text-lg md:text-2xl text-white mb-8 max-w-3xl leading-relaxed font-bold mx-auto opacity-90"
           >
-            Étudiant en 2ème année de BTS Communication au Lycée Jacques Brel. 
+            Étudiant en 2ème année de BTS Communication. 
             Je transforme les idées en expériences visuelles mémorables. 🚀
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="mb-10 md:mb-12"
+          >
+            <div className="inline-block bg-[var(--color-creative-yellow)] text-black px-4 sm:px-6 py-2 sm:py-3 font-black uppercase tracking-wider text-xs sm:text-sm md:text-base border-2 border-black shadow-[4px_4px_0_0_#000] rotate-[-1deg] hover:rotate-0 transition-all cursor-default">
+              🎯 À la recherche d'une alternance
+            </div>
+            <p className="text-white mt-4 font-medium text-sm md:text-lg max-w-2xl mx-auto opacity-90">
+              En <strong className="text-white font-black">Communication Digitale</strong> ou <strong className="text-white font-black">Design Graphique</strong> pour la rentrée 2026.
+            </p>
+          </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -245,7 +264,7 @@ export default function Home() {
       </section>
 
       {/* QUICK ABOUT / STATS SECTION */}
-      <section className="bg-[#111111] text-white relative py-20 md:py-32 overflow-hidden border-y-[6px] border-black">
+      <section className="bg-gradient-to-b from-primary via-[#0f172a]/80 to-primary text-white relative py-20 md:py-32 overflow-hidden border-y-[6px] border-black">
 
 
         {/* Decorative accent line */}
@@ -317,7 +336,7 @@ export default function Home() {
                   Ce parcours m'a permis de développer à la fois des compétences techniques et une vision créative orientée vers le digital.
                 </p>
               </div>
-              <Link to="/cv" className="mt-8 md:mt-10 inline-flex items-center gap-2 font-black text-white hover:text-[var(--color-creative-pink)] transition-colors group">
+              <Link to="/cv" className="mt-8 md:mt-10 inline-flex items-center gap-2 font-black text-white hover:text-[var(--color-creative-blue)] transition-colors group">
                 Voir mon parcours complet 
                 <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform border-2 border-current rounded-full p-1" />
               </Link>
@@ -327,7 +346,7 @@ export default function Home() {
           {/* Stats Row - Updated for Light Theme */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16 relative">
              {/* Decorative stickers around stats */}
-             <div className="sticker-shape sticker-pink absolute -top-8 left-2 rotate-[-5deg] z-20">Analytics</div>
+             <div className="sticker-shape sticker-blue absolute -top-8 left-2 rotate-[-5deg] z-20">Analytics</div>
              
              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white border-[3px] border-black shadow-[6px_6px_0_0_#000] p-6 rounded-none text-center">
                 <span className="text-4xl md:text-5xl font-heading font-black text-black block mb-2"><Counter to={4} /></span>
@@ -353,7 +372,8 @@ export default function Home() {
       <InfiniteMarquee />
 
       {/* FEATURED PROJECTS */}
-      <section className="section-container bg-transparent relative">
+      <section className="bg-gradient-to-b from-primary via-[#022c22]/60 to-primary relative pb-32">
+        <div className="section-container relative">
         <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[var(--color-creative-cyan)] rounded-full blur-[140px] opacity-[0.06] -z-10" />
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-6 md:gap-8">
@@ -370,7 +390,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-7xl font-black mb-4 md:mb-6 tracking-tighter uppercase">
                 Une sélection <br />
                 <span className="text-[var(--color-creative-cyan)]" style={{ WebkitTextStroke: '2px white' }}>des travaux</span> <br />
-                <span className="bg-[var(--color-creative-pink)] text-white px-3 inline-block rotate-1 shadow-[4px_4px_0_0_#fff] border-2 border-white">phares</span>
+                <span className="bg-[var(--color-creative-blue)] text-white px-3 inline-block rotate-1 shadow-[4px_4px_0_0_#fff] border-2 border-white">phares</span>
               </h2>
           </motion.div>
         </div>
@@ -392,7 +412,7 @@ export default function Home() {
                   className="w-full h-full object-cover"
                   skeletonClassName="opacity-20"
                 />
-                <div className={`absolute top-2 right-2 sm:top-4 sm:right-4 text-black font-black uppercase px-2 py-0.5 sm:px-3 sm:py-1 text-[7px] sm:text-[10px] md:text-xs border sm:border-2 border-black rotate-[-5deg] ${i === 0 ? 'bg-[var(--color-creative-green)]' : 'bg-[var(--color-creative-purple)] text-white'}`}>
+                <div className={`absolute top-2 right-2 sm:top-4 sm:right-4 text-black font-black uppercase px-2 py-0.5 sm:px-3 sm:py-1 text-[7px] sm:text-[10px] md:text-xs border sm:border-2 border-black rotate-[-5deg] ${i === 0 ? 'bg-[var(--color-creative-green)]' : 'bg-[var(--color-creative-orange)] text-white'}`}>
                   {project.category}
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
@@ -421,7 +441,7 @@ export default function Home() {
                   {project.desc}
                 </p>
                 <Magnetic>
-                  <Link to={project.path} className={`inline-flex items-center gap-4 font-black text-black hover:text-white transition-all group/link text-sm md:text-base px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] ${i === 0 ? 'bg-[var(--color-creative-green)]' : 'bg-[var(--color-creative-purple)] text-white'}`}>
+                  <Link to={project.path} className={`inline-flex items-center gap-4 font-black text-black hover:text-white transition-all group/link text-sm md:text-base px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] ${i === 0 ? 'bg-[var(--color-creative-green)]' : 'bg-[var(--color-creative-orange)] text-white'}`}>
                     Détails du projet 
                     <ArrowRight size={20} className="group-hover/link:translate-x-2 transition-transform" />
                   </Link>
@@ -446,13 +466,14 @@ export default function Home() {
             </Link>
           </Magnetic>
         </motion.div>
+        </div>
       </section>
 
       {/* PASSION SECTION */}
       <PassionSection />
 
       {/* CTA SECTION */}
-      <section className="bg-transparent py-32 md:py-48 relative">
+      <section className="bg-gradient-to-b from-primary via-[#ea580c]/20 to-primary py-32 md:py-48 relative">
         <div className="section-container text-center relative z-10">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
@@ -466,7 +487,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-8xl font-black mb-8 md:mb-12 text-white tracking-tighter leading-[1] uppercase relative">
               Un projet en tête ? <br />
               <span className="editorial-title-outline text-[var(--color-creative-cyan)] mt-2 inline-block -rotate-2">Parlons-en.</span>
-              <div className="absolute -top-12 right-0 md:right-10 sticker-shape sticker-pink rotate-[10deg]">Hello!</div>
+              <div className="absolute -top-12 right-0 md:right-10 sticker-shape sticker-blue rotate-[10deg]">Hello!</div>
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10">

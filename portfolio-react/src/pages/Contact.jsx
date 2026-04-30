@@ -17,13 +17,13 @@ export default function Contact() {
   }
 
   return (
-    <main className="relative pb-20 bg-transparent min-h-screen overflow-hidden">
+    <main className="relative pb-20 bg-gradient-to-b from-primary via-[#ea580c]/20 to-primary min-h-screen overflow-hidden">
       <PageHero
         tag="Contact"
-        title={<>Parlons de votre <br /><span className="text-[var(--color-creative-pink)] uppercase font-black" style={{ WebkitTextStroke: '1px white' }}>prochain projet.</span></>}
+        title={<>Parlons de votre <br /><span className="text-[var(--color-creative-blue)] uppercase font-black" style={{ WebkitTextStroke: '1px white' }}>prochain projet.</span></>}
         subtitle="Que vous ayez une idée précise ou que vous souhaitiez explorer des possibilités, je suis là pour vous accompagner."
         compact
-        themeColor="purple"
+        themeColor="orange"
       />
 
 
@@ -34,7 +34,7 @@ export default function Contact() {
 
       <section className="section-container relative z-10">
         {/* Section Color Blobs */}
-        <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-[var(--color-creative-pink)] rounded-full blur-[140px] opacity-[0.05] -z-10" />
+        <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-[var(--color-creative-blue)] rounded-full blur-[140px] opacity-[0.05] -z-10" />
 
         
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32">
@@ -58,7 +58,7 @@ export default function Contact() {
                 >
                   <Magnetic>
                     <a href={item.href} target={item.href.startsWith('http') ? "_blank" : "_self"} rel="noreferrer" className="flex items-center gap-6 group">
-                      <div className="p-4 rounded-none bg-white border-4 border-black group-hover:bg-[var(--color-creative-pink)] transition-all shadow-[6px_6px_0_0_#000] group-hover:scale-110 duration-500">
+                      <div className="p-4 rounded-none bg-white border-4 border-black group-hover:bg-[var(--color-creative-blue)] transition-all shadow-[6px_6px_0_0_#000] group-hover:scale-110 duration-500">
                         <div className="text-black group-hover:text-white">{item.icon}</div>
                       </div>
                       <div>
@@ -77,7 +77,7 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 md:p-12 rounded-none bg-[var(--color-primary)] border-4 border-black shadow-[12px_12px_0_0_var(--color-creative-pink)] relative overflow-hidden"
+            className="p-8 md:p-12 rounded-none bg-[var(--color-primary)] border-4 border-black shadow-[12px_12px_0_0_var(--color-creative-blue)] relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 p-8 text-white/5 -rotate-12 translate-x-4 -translate-y-4">
               <MessageSquare size={120} />
@@ -159,7 +159,7 @@ export default function Contact() {
                       name="message"
                       rows="4"
                       placeholder="Comment puis-je vous aider ?"
-                      className="w-full bg-white border-2 sm:border-4 border-black rounded-none px-4 py-3 sm:px-6 sm:py-5 focus:outline-none focus:bg-[var(--color-creative-pink)] focus:text-white transition-all text-black font-bold placeholder:text-black/30 resize-none shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000]"
+                      className="w-full bg-white border-2 sm:border-4 border-black rounded-none px-4 py-3 sm:px-6 sm:py-5 focus:outline-none focus:bg-[var(--color-creative-blue)] focus:text-white transition-all text-black font-bold placeholder:text-black/30 resize-none shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000]"
                     ></textarea>
                   </div>
 
