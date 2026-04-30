@@ -75,8 +75,8 @@ export default function Competences() {
               }`}>
                 {skill.icon}
               </div>
-              <h3 className="text-[11px] sm:text-[14px] md:text-2xl font-black mb-2 md:mb-4 uppercase tracking-tighter text-black break-words hyphens-auto leading-tight">{skill.title}</h3>
-              <p className="text-gray-700 leading-tight md:leading-relaxed text-[10px] md:text-sm font-bold">{skill.desc}</p>
+              <h3 className="text-xs sm:text-base md:text-xl font-black mb-2 md:mb-4 uppercase tracking-tighter text-black leading-tight">{skill.title}</h3>
+              <p className="text-gray-700 leading-relaxed text-xs md:text-sm font-medium">{skill.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -110,8 +110,8 @@ export default function Competences() {
                     {item.abbr}
                   </div>
                 </div>
-                <h3 className="text-[10px] sm:text-[14px] md:text-xl font-black mb-1 md:mb-3 uppercase tracking-tighter text-black break-words hyphens-auto leading-tight">{item.name}</h3>
-                <p className="text-gray-600 text-[9px] md:text-sm mb-3 md:mb-6 leading-tight md:leading-relaxed font-bold">
+                <h3 className="text-xs sm:text-sm md:text-lg font-black mb-1 md:mb-3 uppercase tracking-tighter text-black leading-tight">{item.name}</h3>
+                <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-6 leading-relaxed font-medium">
                   {item.desc}
                 </p>
                 <div className="mt-auto">
@@ -152,8 +152,8 @@ export default function Competences() {
                   <img src={lang.flag} alt={lang.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h3 className="text-[10px] sm:text-[12px] md:text-lg font-bold mb-0.5 md:mb-1">{lang.name}</h3>
-                  <p className="text-accent-light text-[7px] sm:text-[8px] md:text-[10px] font-bold uppercase tracking-widest leading-tight">{lang.info}</p>
+                  <h3 className="text-xs sm:text-sm md:text-base font-bold mb-0.5 md:mb-1">{lang.name}</h3>
+                  <p className="text-accent-light text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-widest leading-tight">{lang.info}</p>
                 </div>
               </motion.div>
             ))}

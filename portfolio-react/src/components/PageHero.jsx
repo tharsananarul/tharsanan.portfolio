@@ -64,7 +64,8 @@ export default function PageHero({ tag, title, subtitle, compact = false, themeC
             initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ delay: 0.15, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black mb-6 md:mb-8 tracking-tighter leading-[1] uppercase"
+            className="font-black mb-6 md:mb-8 tracking-tighter leading-[1] uppercase"
+            style={{ fontSize: 'clamp(2.2rem, 8vw, 7rem)' }}
           >
             {title}
           </motion.h1>
