@@ -122,8 +122,8 @@ export default function Home() {
         {/* Creative Abstract Background */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-gradient-to-b from-[#0f0c29] via-[#1e3a8a]/40 to-primary">
           <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--color-creative-yellow)] rounded-full blur-[100px] opacity-40 mix-blend-screen animate-pulse" style={{ animationDuration: '8s' }} />
-          <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-[var(--color-creative-cyan)] rounded-full blur-[120px] opacity-30 mix-blend-screen animate-pulse" style={{ animationDuration: '12s' }} />
-          <div className="absolute top-[30%] left-[60%] w-[40vw] h-[40vw] bg-[var(--color-creative-blue)] rounded-full blur-[90px] opacity-20 mix-blend-screen animate-pulse" style={{ animationDuration: '10s' }} />
+          <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-[var(--color-creative-blue)] rounded-full blur-[120px] opacity-30 mix-blend-screen animate-pulse" style={{ animationDuration: '12s' }} />
+          <div className="absolute top-[30%] left-[60%] w-[40vw] h-[40vw] bg-[var(--color-creative-orange)] rounded-full blur-[90px] opacity-20 mix-blend-screen animate-pulse" style={{ animationDuration: '10s' }} />
           <div className="grid-overlay opacity-30" />
         </div>
 
@@ -177,7 +177,7 @@ export default function Home() {
               transition={{ delay: 0.7, duration: 0.8 }}
               className="text-3xl md:text-5xl font-black mb-2 md:mb-4 tracking-tighter"
             >
-              Bonjour, <br className="md:hidden" />je suis
+              Bienvenue, <br className="md:hidden" />je suis
             </motion.h2>
             
             <motion.h1 
@@ -298,7 +298,7 @@ export default function Home() {
                 }}
               >
                 <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] h-auto group mx-auto">
-                  <div className="absolute inset-0 bg-[var(--color-creative-cyan)] translate-x-4 translate-y-4 border-2 border-white -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+                  <div className="absolute inset-0 bg-[var(--color-creative-blue)] translate-x-4 translate-y-4 border-2 border-white -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
                   <LazyImage 
                     src={`${baseUrl}images/photo-studio-creative.png`}
                     alt="Tharsanan"
@@ -327,7 +327,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-6xl font-black mb-6 md:mb-8 tracking-tighter leading-tight uppercase relative inline-block text-white">
                 Un parcours entre <br />
                 <span className="mt-2 inline-block" style={{ color: '#ffaa00', WebkitTextStroke: '2px white' }}>technique</span> et <br />
-                <span className="bg-[var(--color-creative-cyan)] text-black px-2 mt-2 inline-block -rotate-2 border-2 border-white shadow-[4px_4px_0_0_#fff]">communication</span>
+                <span className="bg-[var(--color-creative-blue)] text-white px-2 mt-2 inline-block -rotate-2 border-2 border-white shadow-[4px_4px_0_0_#fff]">communication</span>
               </h2>
               <div className="space-y-4 md:space-y-6 text-white/90 font-bold text-sm md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
 
@@ -356,9 +356,9 @@ export default function Home() {
                 <span className="text-4xl md:text-5xl font-heading font-black text-black block mb-2"><Counter to={1} /></span>
                 <span className="text-xs font-bold uppercase tracking-widest text-black">An d'expérience</span>
              </motion.div>
-             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-[var(--color-creative-cyan)] border-[3px] border-black shadow-[6px_6px_0_0_#000] p-6 rounded-none text-center relative -top-2">
-                <span className="text-4xl md:text-5xl font-heading font-black text-black block mb-2"><Counter to={6} /></span>
-                <span className="text-xs font-bold uppercase tracking-widest text-black">Logiciels</span>
+             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-[var(--color-creative-blue)] border-[3px] border-black shadow-[6px_6px_0_0_#000] p-6 rounded-none text-center relative -top-2">
+                <span className="text-4xl md:text-5xl font-heading font-black text-white block mb-2"><Counter to={6} /></span>
+                <span className="text-xs font-bold uppercase tracking-widest text-white">Logiciels</span>
              </motion.div>
              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="bg-white border-[3px] border-black shadow-[6px_6px_0_0_#000] p-6 rounded-none text-center relative top-2">
                 <span className="text-4xl md:text-5xl font-heading font-black text-black block mb-2"><Counter to={100} suffix="%" /></span>
@@ -374,7 +374,7 @@ export default function Home() {
       {/* FEATURED PROJECTS */}
       <section className="bg-gradient-to-b from-primary via-[#022c22]/60 to-primary relative pb-32">
         <div className="section-container relative">
-        <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[var(--color-creative-cyan)] rounded-full blur-[140px] opacity-[0.06] -z-10" />
+        <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[var(--color-creative-blue)] rounded-full blur-[140px] opacity-[0.06] -z-10" />
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-6 md:gap-8">
           <motion.div
@@ -389,8 +389,8 @@ export default function Home() {
 
             <h2 className="text-3xl md:text-7xl font-black mb-4 md:mb-6 tracking-tighter uppercase">
                 Une sélection <br />
-                <span className="text-[var(--color-creative-cyan)]" style={{ WebkitTextStroke: '2px white' }}>des travaux</span> <br />
-                <span className="bg-[var(--color-creative-blue)] text-white px-3 inline-block rotate-1 shadow-[4px_4px_0_0_#fff] border-2 border-white">phares</span>
+                <span className="text-[var(--color-creative-blue)]" style={{ WebkitTextStroke: '2px white' }}>des travaux</span> <br />
+                <span className="bg-[var(--color-creative-orange)] text-white px-3 inline-block rotate-1 shadow-[4px_4px_0_0_#fff] border-2 border-white">phares</span>
               </h2>
           </motion.div>
         </div>
@@ -441,7 +441,7 @@ export default function Home() {
                   {project.desc}
                 </p>
                 <Magnetic>
-                  <Link to={project.path} className={`inline-flex items-center gap-4 font-black text-black hover:text-white transition-all group/link text-sm md:text-base px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] ${i === 0 ? 'bg-[var(--color-creative-green)]' : 'bg-[var(--color-creative-orange)] text-white'}`}>
+                  <Link to={project.path} className={`inline-flex items-center gap-4 font-black text-black hover:text-white transition-all group/link text-sm md:text-base px-6 py-3 border-2 border-black shadow-[4px_4px_0_0_#000] ${i === 0 ? 'bg-[var(--color-creative-blue)] text-white' : 'bg-[var(--color-creative-orange)] text-white'}`}>
                     Détails du projet 
                     <ArrowRight size={20} className="group-hover/link:translate-x-2 transition-transform" />
                   </Link>
@@ -486,12 +486,12 @@ export default function Home() {
 
             <h2 className="text-4xl md:text-8xl font-black mb-8 md:mb-12 text-white tracking-tighter leading-[1] uppercase relative">
               Un projet en tête ? <br />
-              <span className="editorial-title-outline text-[var(--color-creative-cyan)] mt-2 inline-block -rotate-2">Parlons-en.</span>
+              <span className="editorial-title-outline text-[var(--color-creative-orange)] mt-2 inline-block -rotate-2">Parlons-en.</span>
               <div className="absolute -top-12 right-0 md:right-10 sticker-shape sticker-blue rotate-[10deg]">Hello!</div>
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10">
-              <Link to="/contact" className="btn-premium px-12 py-6 w-full sm:w-auto text-lg shadow-accent/20 bg-[var(--color-creative-green)] hover:bg-[var(--color-creative-yellow)] text-black">
+              <Link to="/contact" className="btn-premium px-12 py-6 w-full sm:w-auto text-lg shadow-accent/20 bg-[var(--color-creative-orange)] hover:bg-[var(--color-creative-yellow)] text-white">
 
                 Me contacter
               </Link>

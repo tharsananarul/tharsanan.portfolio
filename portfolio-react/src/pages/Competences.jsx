@@ -71,7 +71,7 @@ export default function Competences() {
               <div className={`w-10 h-10 md:w-14 md:h-14 rounded-none border-2 border-black flex items-center justify-center mb-4 md:mb-8 transition-all duration-500 transform group-hover:rotate-6 shadow-[4px_4px_0_0_#000] ${
                 i % 3 === 0 ? 'bg-[var(--color-creative-blue)] text-white' : 
                 i % 3 === 1 ? 'bg-[var(--color-creative-yellow)] text-black' : 
-                'bg-[var(--color-creative-cyan)] text-black'
+                'bg-[var(--color-creative-blue)] text-black'
               }`}>
                 {skill.icon}
               </div>
@@ -85,7 +85,7 @@ export default function Competences() {
         <div className="mb-32">
           <h2 className="text-2xl md:text-6xl font-black mb-16 tracking-tighter uppercase">
             Logiciels <br />
-            <span className="text-[var(--color-creative-cyan)]" style={{ WebkitTextStroke: '2px white' }}>maîtrisés</span>
+            <span className="text-[var(--color-creative-blue)]" style={{ WebkitTextStroke: '2px white' }}>maîtrisés</span>
           </h2>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 relative">

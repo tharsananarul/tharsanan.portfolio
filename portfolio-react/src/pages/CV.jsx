@@ -111,7 +111,7 @@ export default function CV() {
             scale: [1, 1.3, 1]
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="hidden md:block absolute bottom-[10%] left-[-5%] w-[40%] h-[40%] bg-[var(--color-creative-cyan)]/10 blur-[100px] rounded-full"
+          className="hidden md:block absolute bottom-[10%] left-[-5%] w-[40%] h-[40%] bg-[var(--color-creative-blue)]/10 blur-[100px] rounded-full"
         />
         <motion.div 
           animate={{ 
@@ -169,7 +169,7 @@ export default function CV() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="bg-white p-4 sm:p-6 md:p-8 rounded-none border-2 sm:border-4 border-black shadow-[4px_4px_0_0_var(--color-creative-cyan)] md:shadow-[8px_8px_0_0_var(--color-creative-cyan)] group hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_0_var(--color-creative-cyan)] md:hover:shadow-[4px_4px_0_0_var(--color-creative-cyan)] transition-all duration-500"
+                  className="bg-white p-4 sm:p-6 md:p-8 rounded-none border-2 sm:border-4 border-black shadow-[4px_4px_0_0_var(--color-creative-blue)] md:shadow-[8px_8px_0_0_var(--color-creative-blue)] group hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_0_var(--color-creative-blue)] md:hover:shadow-[4px_4px_0_0_var(--color-creative-blue)] transition-all duration-500"
                 >
                   <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.1em] sm:tracking-[0.2em] text-[var(--color-creative-blue)] mb-1 sm:mb-2 block">{item.period}</span>
                   <h3 className="text-base sm:text-xl md:text-2xl font-black mb-1 sm:mb-2 uppercase tracking-tighter text-black leading-tight">{item.title}</h3>
@@ -270,7 +270,7 @@ export default function CV() {
                       <h3 className="text-base sm:text-xl md:text-2xl font-black mb-1 sm:mb-2 uppercase tracking-tighter text-black leading-tight">{item.title}</h3>
                       <div className="flex flex-wrap items-center gap-2 md:gap-4">
                         <span className="text-base sm:text-xl font-black text-black">{item.company}</span>
-                        <span className="px-2 py-1 sm:px-4 sm:py-1.5 rounded-none border sm:border-2 border-black bg-[var(--color-creative-cyan)] text-[8px] sm:text-[10px] font-black uppercase text-black tracking-wider">
+                        <span className="px-2 py-1 sm:px-4 sm:py-1.5 rounded-none border sm:border-2 border-black bg-[var(--color-creative-blue)] text-[8px] sm:text-[10px] font-black uppercase text-black tracking-wider">
                           {item.type}
                         </span>
                       </div>
@@ -314,14 +314,14 @@ export default function CV() {
             </p>
             <div className="flex flex-wrap justify-center gap-3 md:gap-4">
               {[
-                { name: "Autonomie", color: "text-blue-300", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "shadow-[0_0_15px_rgba(59,130,246,0.15)]" },
-                { name: "Travail d'équipe", color: "text-emerald-300", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "shadow-[0_0_15px_rgba(16,185,129,0.15)]" },
-                { name: "Adaptabilité", color: "text-violet-300", bg: "bg-violet-500/10", border: "border-violet-500/20", glow: "shadow-[0_0_15px_rgba(139,92,246,0.15)]" },
-                { name: "Rigueur", color: "text-amber-300", bg: "bg-amber-500/10", border: "border-amber-500/20", glow: "shadow-[0_0_15px_rgba(245,158,11,0.15)]" },
-                { name: "Créativité", color: "text-orange-300", bg: "bg-orange-500/10", border: "border-orange-500/20", glow: "shadow-[0_0_15px_rgba(249,115,22,0.15)]" }
+                { name: "Autonomie", color: "text-white", bg: "bg-[var(--color-creative-blue)]", border: "border-black" },
+                { name: "Travail d'équipe", color: "text-black", bg: "bg-[var(--color-creative-yellow)]", border: "border-black" },
+                { name: "Adaptabilité", color: "text-white", bg: "bg-[var(--color-creative-orange)]", border: "border-black" },
+                { name: "Rigueur", color: "text-white", bg: "bg-[var(--color-creative-blue)]", border: "border-black" },
+                { name: "Créativité", color: "text-black", bg: "bg-[var(--color-creative-yellow)]", border: "border-black" }
               ].map(skill => (
                 <Magnetic key={skill.name}>
-                  <div className={`px-5 py-2.5 md:px-8 md:py-4 rounded-full ${skill.bg} ${skill.border} border ${skill.glow} text-xs md:text-sm font-bold ${skill.color} hover:scale-105 transition-all cursor-default`}>
+                  <div className={`px-5 py-2.5 md:px-8 md:py-4 rounded-none ${skill.bg} ${skill.border} border-2 shadow-[4px_4px_0_0_#000] text-xs md:text-sm font-black uppercase tracking-wider ${skill.color} hover:scale-105 transition-all cursor-default`}>
                     {skill.name}
                   </div>
                 </Magnetic>

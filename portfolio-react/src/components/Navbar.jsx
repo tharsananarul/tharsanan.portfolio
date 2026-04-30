@@ -116,7 +116,7 @@ export default function Navbar() {
       <div className="hidden md:flex items-center gap-10">
         <div className="flex items-center gap-8 nav-links">
           {navLinks.map((link, i) => {
-            const colors = ['cyan', 'blue', 'yellow', 'green'];
+            const colors = ['blue', 'yellow', 'orange', 'blue'];
             const color = colors[i % colors.length];
             return (
             <Magnetic key={link.name}>
@@ -187,7 +187,7 @@ export default function Navbar() {
             <div className="flex flex-col p-6 pt-24 gap-6 items-center text-center">
               <p className="text-accent-light font-black tracking-[0.4em] uppercase text-sm mb-2 opacity-80">Menu</p>
                 {navLinks.map((link, i) => {
-                  const colors = ['cyan', 'blue', 'yellow', 'green'];
+                  const colors = ['blue', 'yellow', 'orange', 'blue'];
                   const color = colors[i % colors.length];
                   return (
                   <motion.div
@@ -220,7 +220,7 @@ export default function Navbar() {
               
               <div className="mt-auto p-8 border-t-4 border-black bg-[var(--color-primary)]">
                 <div className="flex items-center gap-6 mb-8">
-                  <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-white hover:text-[var(--color-creative-cyan)] transition-colors">
+                  <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-white hover:text-[var(--color-creative-blue)] transition-colors">
                     <Linkedin size={24} />
                   </a>
                   <a href="https://github.com/tharsananarul" target="_blank" rel="noreferrer" className="text-white hover:text-[var(--color-creative-blue)] transition-colors">

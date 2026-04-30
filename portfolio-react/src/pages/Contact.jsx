@@ -63,7 +63,7 @@ export default function Contact() {
                       </div>
                       <div className="min-w-0">
                         <p className="text-[10px] text-white font-black uppercase tracking-widest mb-1">{item.label}</p>
-                        <p className="text-sm sm:text-base md:text-lg font-black text-white group-hover:text-[var(--color-creative-cyan)] transition-colors tracking-tight truncate">{item.val}</p>
+                        <p className="text-sm sm:text-base md:text-lg font-black text-white group-hover:text-[var(--color-creative-blue)] transition-colors tracking-tight truncate">{item.val}</p>
                       </div>
                     </a>
                   </Magnetic>
@@ -137,7 +137,7 @@ export default function Contact() {
                         name="email"
                         type="email" 
                         placeholder="marcel@dubois.fr"
-                        className="w-full bg-white border-2 sm:border-4 border-black rounded-none px-4 py-3 sm:px-6 sm:py-5 focus:outline-none focus:bg-[var(--color-creative-cyan)] transition-all text-black font-bold placeholder:text-black/30 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000]"
+                        className="w-full bg-white border-2 sm:border-4 border-black rounded-none px-4 py-3 sm:px-6 sm:py-5 focus:outline-none focus:bg-[var(--color-creative-blue)] transition-all text-black font-bold placeholder:text-black/30 shadow-[2px_2px_0_0_#000] sm:shadow-[4px_4px_0_0_#000]"
                       />
                     </div>
                   </div>
